@@ -1,0 +1,33 @@
+.nav-web {
+  padding: 20px;
+  background: transparent;
+}
+
+.nav-web-logo {
+  height: 70px;
+}
+
+.nav-web-logo img {
+  height: 100%;
+  width: 100%;
+}
+
+.nav-web-link {
+  color: var(--primary-text-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: small;
+  padding: 9px;
+  transition: all 0.2s ease;
+  border-radius: 5px;
+}
+
+.nav-web-link:hover {
+  background: #efefef;
+}
+
+.nav-web-links .active {
+  background: rgb(62, 62, 141);
+  color: var(--secondary-text-color);
+}

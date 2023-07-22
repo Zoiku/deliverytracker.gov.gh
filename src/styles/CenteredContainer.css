@@ -1,0 +1,17 @@
+.centered-container-component {
+  display: flex;
+  justify-content: center;
+}
+
+.centered-container {
+  width: 1100px;
+  height: 100%;
+  padding: 50px 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .centered-container {
+    width: 100%;
+    padding: 10px;
+  }
+}
