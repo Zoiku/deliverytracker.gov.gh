@@ -1,7 +1,7 @@
-import { Stack } from "@mui/material";
 import "../styles/Nav.css";
+import { Stack } from "@mui/material";
 import NavWebLogo from "../assets/gov-logo.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { NavLinksList } from "../lists/Nav";
 import Search from "../components/Search";
 
@@ -12,7 +12,7 @@ const Link = ({ label, to }) => (
 );
 
 const Links = () => (
-  <Stack direction="row" spacing={2} className="nav-web-links">
+  <Stack direction="row" spacing={1} className="nav-web-links">
     {NavLinksList.map((link, index) => (
       <Link key={index} to={link.to} label={link.label} end />
     ))}
@@ -20,6 +20,9 @@ const Links = () => (
 );
 
 const Nav = () => {
+  const navigate = useNavigate();
+  const navigateTo = (path) => () => navigate(path);
+
   return (
     <div className="nav-component">
       <nav className="nav-web-container">
@@ -28,13 +31,22 @@ const Nav = () => {
           direction="row"
           justifyContent="space-evenly"
           alignItems="center"
-          spacing={5}
         >
-          <div className="nav-web-logo-container">
+          <Stack
+            direction="row"
+            alignItems="center"
+            spacing={3}
+            className="nav-web-logo-container"
+          >
             <div className="nav-web-logo">
-              <img src={NavWebLogo} alt="Ghana Beyond Aid Logo" />
+              <img
+                onClick={navigateTo("/")}
+                src={NavWebLogo}
+                alt="Ghana Beyond Aid Logo"
+              />
             </div>
-          </div>
+            <div className="nav-web-logo-text">Promises Delivery Tracker</div>
+          </Stack>
           <Stack
             direction="row"
             alignItems="center"
