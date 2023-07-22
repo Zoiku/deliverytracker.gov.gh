@@ -1,9 +1,9 @@
 #building
 FROM node:20 as build
 WORKDIR /app
-COPY package*.json .
+COPY package*.json /app/
 RUN npm install --silent
-COPY . .
+COPY . /app/
 RUN npm run build
 
 #production
