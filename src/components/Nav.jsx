@@ -3,7 +3,8 @@ import { Stack } from "@mui/material";
 import NavWebLogo from "../assets/gov-logo.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import { NavLinksList } from "../lists/Nav";
-import Search from "../components/Search";
+import Search from "./Search";
+import Hamburger from "./Hamburger";
 
 const Link = ({ label, to }) => (
   <NavLink className="nav-web-link" to={to}>
@@ -25,6 +26,24 @@ const Nav = () => {
 
   return (
     <div className="nav-component">
+      <nav className="nav-mobile-container">
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+          className="nav-mobile"
+          paddingX={2}
+        >
+          <Stack>
+            <div className="nav-mobile-logo">
+              <img src={NavWebLogo} alt="" />
+            </div>
+            <div className=""></div>
+          </Stack>
+          <Hamburger />
+        </Stack>
+      </nav>
+
       <nav className="nav-web-container">
         <Stack
           className="nav-web"
@@ -53,8 +72,8 @@ const Nav = () => {
             spacing={2}
             className="nav-web-links-container"
           >
+            <Search yesModal placeholder="SEARCH" />
             <Links />
-            <Search placeholder="SEARCH" />
           </Stack>
         </Stack>
       </nav>

@@ -21,5 +21,6 @@
   right: 0;
   bottom: 0;
   top: 0;
-  background: #0000008a;
+  background: #000000a1;
+  z-index: 1;
 }
