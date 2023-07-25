@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <main>
       <OverlayContainer
-        height={"calc(100vh - 110px)"}
+        height={"100vh"}
         imgSrcs={[overlayImgSrc1, overlayImgSrc2]}
       ></OverlayContainer>
     </main>

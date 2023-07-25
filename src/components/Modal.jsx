@@ -1,21 +1,26 @@
 import "../styles/Modal.css";
 import { Box, Modal } from "@mui/material";
+import Slide from "@mui/material/Slide/Slide";
+import { styles } from "../styles/js/Modal";
 
 const ModalComponent = ({
   open,
   onClose,
   children,
-  styles,
   heading,
   customHeading,
+  slideDirection,
+  customStyles,
 }) => {
   return (
     <Modal className="modal-component-container" onClose={onClose} open={open}>
-      <Box sx={styles}>
-        {heading && <div className="modal-heading">{heading}</div>}
-        {customHeading && { customHeading }}
-        <div className="modal-content">{children}</div>
-      </Box>
+      <Slide in={open} direction={slideDirection}>
+        <Box sx={{ ...styles, ...customStyles }}>
+          {heading && <div className="modal-heading">{heading}</div>}
+          {customHeading && { customHeading }}
+          <div className="modal-content">{children}</div>
+        </Box>
+      </Slide>
     </Modal>
   );
 };
