@@ -1,10 +1,10 @@
 import "../styles/Search.css";
 import { useState } from "react";
-import { IconButton, Stack } from "@mui/material";
+import { IconButton, InputBase, Stack } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import Modal from "./Modal";
 
-const Search = ({ placeholder, yesModal }) => {
+const Search = ({ yesModal }) => {
   const [openModal, setOpenModal] = useState(false);
   const toggleOpenModal = (open) => () => {
     setOpenModal(open);
@@ -16,10 +16,23 @@ const Search = ({ placeholder, yesModal }) => {
         <>
           <Modal
             open={openModal}
-            heading="Search"
             onClose={toggleOpenModal(false)}
             slideDirection="down"
-          ></Modal>
+            element={
+              <Stack position="relative">
+                <Stack
+                  sx={{
+                    position: "absolute",
+                    left: "20px",
+                    right: "20px",
+                    top: "20px",
+                  }}
+                >
+                  <Search />
+                </Stack>
+              </Stack>
+            }
+          />
 
           <Stack
             onClick={toggleOpenModal(true)}
@@ -44,6 +57,29 @@ const Search = ({ placeholder, yesModal }) => {
           </Stack>
         </>
       )}
+
+      {/* {!yesModal && (
+        <Stack
+          onClick={toggleOpenModal(true)}
+          component="form"
+          direction="row"
+          alignItems="center"
+          padding={"5px"}
+          borderRadius={1}
+          sx={{
+            background: "#fff",
+            cursor: "pointer",
+          }}
+        >
+          <IconButton disabled>
+            <SearchIcon />
+          </IconButton>
+          <InputBase
+            placeholder="Search"
+            sx={{ ml: 1, flex: 1, color: "gray" }}
+          />
+        </Stack>
+      )} */}
     </>
   );
 };

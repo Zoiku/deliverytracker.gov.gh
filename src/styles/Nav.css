@@ -41,10 +41,6 @@
   background: #efefef;
 }
 
-.nav-web-links .active {
-  color: var(--primary-theme);
-}
-
 @media screen and (max-width: 1024px) {
   .nav-web-container {
     display: none;

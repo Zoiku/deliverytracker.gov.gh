@@ -10,15 +10,16 @@ const ModalComponent = ({
   heading,
   customHeading,
   slideDirection,
-  customStyles,
+  element,
 }) => {
   return (
     <Modal className="modal-component-container" onClose={onClose} open={open}>
       <Slide in={open} direction={slideDirection}>
-        <Box sx={{ ...styles, ...customStyles }}>
+        <Box sx={{ ...styles }}>
           {heading && <div className="modal-heading">{heading}</div>}
           {customHeading && { customHeading }}
-          <div className="modal-content">{children}</div>
+          {children && <div className="modal-content">{children}</div>}
+          {element && element}
         </Box>
       </Slide>
     </Modal>
