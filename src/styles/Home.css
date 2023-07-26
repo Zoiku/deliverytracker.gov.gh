@@ -1,0 +1,9 @@
+.home-page .overlay-container-component {
+  height: calc(100vh - 110px);
+}
+
+@media screen and (max-width: 1024px) {
+  .home-page .overlay-container-component {
+    height: 100vh !important;
+  }
+}

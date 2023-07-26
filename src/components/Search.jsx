@@ -4,7 +4,7 @@ import { IconButton, InputBase, Stack } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import Modal from "./Modal";
 
-const Search = ({ yesModal }) => {
+const Search = ({ skeleton, main, placeholder }) => {
   const [openModal, setOpenModal] = useState(false);
   const toggleOpenModal = (open) => () => {
     setOpenModal(open);
@@ -12,26 +12,14 @@ const Search = ({ yesModal }) => {
 
   return (
     <>
-      {yesModal && (
+      {skeleton && (
         <>
           <Modal
             open={openModal}
             onClose={toggleOpenModal(false)}
             slideDirection="down"
-            element={
-              <Stack position="relative">
-                <Stack
-                  sx={{
-                    position: "absolute",
-                    left: "20px",
-                    right: "20px",
-                    top: "20px",
-                  }}
-                >
-                  <Search />
-                </Stack>
-              </Stack>
-            }
+            customStyle={{ padding: "30px 200px" }}
+            element={<Search main placeholder="Search" />}
           />
 
           <Stack
@@ -50,7 +38,7 @@ const Search = ({ yesModal }) => {
               alignItems="center"
               direction="row"
               width={200}
-              sx={{ ml: 1, flex: 1, color: "gray" }}
+              sx={{ ml: 1, flex: 1, color: "#777" }}
             >
               <small>Search</small>
             </Stack>
@@ -58,28 +46,26 @@ const Search = ({ yesModal }) => {
         </>
       )}
 
-      {/* {!yesModal && (
+      {main && (
         <Stack
-          onClick={toggleOpenModal(true)}
           component="form"
           direction="row"
           alignItems="center"
-          padding={"5px"}
+          padding={1}
           borderRadius={1}
-          sx={{
-            background: "#fff",
-            cursor: "pointer",
-          }}
         >
-          <IconButton disabled>
+          <IconButton>
             <SearchIcon />
           </IconButton>
           <InputBase
-            placeholder="Search"
-            sx={{ ml: 1, flex: 1, color: "gray" }}
+            autoFocus
+            autoComplete="off"
+            name="search"
+            placeholder={placeholder}
+            sx={{ ml: 2, flex: 1 }}
           />
         </Stack>
-      )} */}
+      )}
     </>
   );
 };

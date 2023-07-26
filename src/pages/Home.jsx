@@ -5,9 +5,8 @@ import "../styles/Home.css";
 
 const Home = () => {
   return (
-    <main>
+    <main className="home-page">
       <OverlayContainer
-        height={"100vh"}
         imgSrcs={[overlayImgSrc1, overlayImgSrc2]}
       ></OverlayContainer>
     </main>

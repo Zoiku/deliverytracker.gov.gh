@@ -21,9 +21,4 @@ export const styles = {
     left: 0,
     top: 0,
   },
-  bmMorphShape: {
-    fill: "rgba(51, 51, 51, 0.41)",
-    backdropFilter: "blur(10.2px)",
-    background: "transparent",
-  },
 };

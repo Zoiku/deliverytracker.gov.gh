@@ -72,7 +72,7 @@ const Nav = () => {
             spacing={2}
             className="nav-web-links-container"
           >
-            <Search yesModal placeholder="SEARCH" />
+            <Search skeleton placeholder="Search" />
             <Links />
           </Stack>
         </Stack>

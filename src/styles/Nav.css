@@ -1,3 +1,10 @@
+.nav-component {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fff;
+}
+
 .nav-web-container {
   display: block;
 }

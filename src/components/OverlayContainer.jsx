@@ -1,9 +1,9 @@
 import "../styles/OverlayContainer.css";
 import Slider from "./Slider";
 
-const OverlayContainer = ({ children, height, imgSrcs }) => {
+const OverlayContainer = ({ children, imgSrcs }) => {
   return (
-    <div style={{ height: height }} className="overlay-container-component">
+    <div className="overlay-container-component">
       <div className="overlay-image-container">
         <div className="overlay-image">
           <Slider srcs={imgSrcs} />
