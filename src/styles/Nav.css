@@ -48,7 +48,7 @@
   background: #efefef;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1150px) {
   .nav-web-container {
     display: none;
   }

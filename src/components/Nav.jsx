@@ -26,24 +26,6 @@ const Nav = () => {
 
   return (
     <div className="nav-component">
-      <nav className="nav-mobile-container">
-        <Stack
-          direction="row"
-          justifyContent="space-between"
-          alignItems="center"
-          className="nav-mobile"
-          paddingX={2}
-        >
-          <Stack>
-            <div className="nav-mobile-logo">
-              <img src={NavWebLogo} alt="" />
-            </div>
-            <div className=""></div>
-          </Stack>
-          <Hamburger />
-        </Stack>
-      </nav>
-
       <nav className="nav-web-container">
         <Stack
           className="nav-web"
@@ -75,6 +57,21 @@ const Nav = () => {
             <Search skeleton placeholder="Search" />
             <Links />
           </Stack>
+        </Stack>
+      </nav>
+
+      <nav className="nav-mobile-container">
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+          className="nav-mobile"
+          paddingX={2}
+        >
+          <div className="nav-mobile-logo">
+            <img src={NavWebLogo} alt="" />
+          </div>
+          <Hamburger />
         </Stack>
       </nav>
     </div>

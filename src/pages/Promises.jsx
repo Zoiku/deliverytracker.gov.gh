@@ -1,9 +1,10 @@
+import "../styles/Promises.css";
 import CenteredContainer from "../components/CenteredContainer";
 
 const Promises = () => {
   return (
     <main className="promises-page">
-      <CenteredContainer></CenteredContainer>
+      <CenteredContainer marginated></CenteredContainer>
     </main>
   );
 };
