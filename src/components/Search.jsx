@@ -28,7 +28,7 @@ const Search = ({ skeleton, main, placeholder }) => {
             component="div"
             direction="row"
             alignItems="center"
-            padding="8px"
+            padding="12px"
             borderRadius={1}
             sx={{ background: "#efefef", cursor: "pointer" }}
           >
@@ -59,6 +59,7 @@ const Search = ({ skeleton, main, placeholder }) => {
             </IconButton>
             <InputBase
               autoFocus
+              type="text"
               autoComplete="off"
               name="search"
               placeholder={placeholder}
@@ -66,7 +67,7 @@ const Search = ({ skeleton, main, placeholder }) => {
               onChange={onChangeSearchInput}
             />
             <Slide
-              direction="left"
+              direction="up"
               in={searchInput ? true : false}
               mountOnEnter
               unmountOnExit

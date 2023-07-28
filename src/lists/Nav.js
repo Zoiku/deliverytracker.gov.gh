@@ -4,11 +4,11 @@ export const NavLinksList = [
     to: "/",
   },
   {
-    label: "Promises",
+    label: "Track Promises",
     to: "/promises",
   },
   {
-    label: "Facts Checker",
+    label: "Verify Facts",
     to: "/fact-check",
   },
 ];

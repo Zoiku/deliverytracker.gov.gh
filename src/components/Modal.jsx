@@ -1,6 +1,6 @@
 import "../styles/Modal.css";
 import { Box, Modal } from "@mui/material";
-import Slide from "@mui/material/Slide/Slide";
+import Slide from "@mui/material/Slide";
 import { styles } from "../styles/js/Modal";
 
 const ModalComponent = ({
