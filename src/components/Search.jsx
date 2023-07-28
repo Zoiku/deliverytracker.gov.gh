@@ -1,8 +1,10 @@
 import "../styles/Search.css";
 import { useState } from "react";
 import { Collapse, IconButton, InputBase, Stack } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
+import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import Modal from "./Modal";
+import Slide from "@mui/material/Slide";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 
 const Search = ({ skeleton, main, placeholder }) => {
   const [openModal, setOpenModal] = useState(false);
@@ -26,18 +28,15 @@ const Search = ({ skeleton, main, placeholder }) => {
             component="div"
             direction="row"
             alignItems="center"
-            padding="0 5px"
+            padding="8px"
             borderRadius={1}
             sx={{ background: "#efefef", cursor: "pointer" }}
           >
-            <IconButton disabled>
-              <SearchIcon fontSize="small" />
-            </IconButton>
             <Stack
               alignItems="center"
               direction="row"
               width={200}
-              sx={{ ml: 1, flex: 1, color: "#777" }}
+              sx={{ ml: 1, flex: 1, color: "#888" }}
             >
               <small>Search</small>
             </Stack>
@@ -48,15 +47,15 @@ const Search = ({ skeleton, main, placeholder }) => {
       {main && (
         <>
           <Stack
-            component="div"
+            component="form"
             direction="row"
             alignItems="center"
             padding={1}
             borderRadius={1}
-            sx={{ background: "#fff" }}
+            sx={{ background: "#fff", overflow: "clip" }}
           >
             <IconButton>
-              <SearchIcon />
+              <SearchRoundedIcon />
             </IconButton>
             <InputBase
               autoFocus
@@ -66,6 +65,16 @@ const Search = ({ skeleton, main, placeholder }) => {
               sx={{ ml: 2, flex: 1 }}
               onChange={onChangeSearchInput}
             />
+            <Slide
+              direction="left"
+              in={searchInput ? true : false}
+              mountOnEnter
+              unmountOnExit
+            >
+              <IconButton>
+                <CloseRoundedIcon />
+              </IconButton>
+            </Slide>
           </Stack>
 
           <Collapse in={searchInput ? true : false}>
