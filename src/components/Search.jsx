@@ -28,7 +28,7 @@ const Search = ({ skeleton, main, placeholder }) => {
             component="div"
             direction="row"
             alignItems="center"
-            padding="12px"
+            padding="8px"
             borderRadius={1}
             sx={{ background: "#efefef", cursor: "pointer" }}
           >
