@@ -20,7 +20,7 @@ const Search = ({ skeleton, main, placeholder }) => {
             open={openModal}
             onClose={toggleOpenModal(false)}
             slideDirection="down"
-            customStyle={{ padding: "30px 200px" }}
+            customStyle={{ padding: "30px 300px" }}
             element={<Search main placeholder="Search" />}
           />
           <Stack
