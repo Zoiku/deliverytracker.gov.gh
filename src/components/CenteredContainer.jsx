@@ -10,13 +10,12 @@ const CenteredContainer = ({
       className="centered-container-component"
       style={{ background: backgroundColor }}
     >
-      {marginated ? (
-        <div style={{ marginTop: 30 }} className="centered-container">
-          {children}
-        </div>
-      ) : (
-        <div className="centered-container">{children}</div>
-      )}
+      <div
+        style={marginated ? { margin: "80px 0" } : {}}
+        className="centered-container"
+      >
+        {children}
+      </div>
     </div>
   );
 };

@@ -28,14 +28,14 @@ const Search = ({ skeleton, main, placeholder }) => {
             component="div"
             direction="row"
             alignItems="center"
-            padding="8px"
+            padding="12px"
             borderRadius={1}
-            sx={{ background: "#efefef", cursor: "pointer" }}
+            sx={{ background: "#efefef", cursor: "pointer", width: "100%" }}
           >
             <Stack
               alignItems="center"
               direction="row"
-              width={200}
+              width={"100%"}
               sx={{ ml: 1, flex: 1, color: "#888" }}
             >
               <small>Search</small>
@@ -85,7 +85,6 @@ const Search = ({ skeleton, main, placeholder }) => {
                 marginTop: 1,
                 padding: 1,
                 borderRadius: 1,
-                height: 300,
               }}
             ></Stack>
           </Collapse>

@@ -1,6 +1,6 @@
 import "../styles/Nav.css";
 import { Stack } from "@mui/material";
-import NavWebLogo from "../assets/gov-logo.png";
+// import NavWebLogo from "../assets/Nav/logo.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import { NavLinksList } from "../lists/Nav";
 import Search from "./Search";
@@ -38,25 +38,15 @@ const Nav = () => {
             <Stack
               direction="row"
               alignItems="center"
-              spacing={3}
               className="nav-web-logo-container"
-            >
-              <div className="nav-web-logo">
-                <img
-                  onClick={navigateTo("/")}
-                  src={NavWebLogo}
-                  alt="Ghana Beyond Aid Logo"
-                />
-              </div>
-              <div className="nav-web-logo-text">Promises Delivery Tracker</div>
-            </Stack>
+            ></Stack>
+
             <Stack
               direction="row"
               alignItems="center"
               spacing={2}
               className="nav-web-links-container"
             >
-              <Search skeleton placeholder="Search" />
               <Links />
             </Stack>
           </Stack>
@@ -71,9 +61,6 @@ const Nav = () => {
           className="nav-mobile"
           paddingX={2}
         >
-          <div className="nav-mobile-logo">
-            <img src={NavWebLogo} alt="" />
-          </div>
           <Hamburger />
         </Stack>
       </nav>
