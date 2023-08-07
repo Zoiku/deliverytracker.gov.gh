@@ -11,7 +11,7 @@ const CenteredContainer = ({
       style={{ background: backgroundColor }}
     >
       <div
-        style={marginated ? { margin: "80px 0" } : {}}
+        style={marginated ? { margin: "50px 0" } : {}}
         className="centered-container"
       >
         {children}

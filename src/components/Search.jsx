@@ -1,12 +1,19 @@
 import "../styles/Search.css";
 import { useState } from "react";
-import { Collapse, IconButton, InputBase, Stack } from "@mui/material";
+import {
+  Collapse,
+  IconButton,
+  InputBase,
+  MenuItem,
+  MenuList,
+  Stack,
+} from "@mui/material";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import Modal from "./Modal";
 import Slide from "@mui/material/Slide";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 
-const Search = ({ skeleton, main, placeholder }) => {
+const Search = ({ skeleton, main, simple, placeholder }) => {
   const [openModal, setOpenModal] = useState(false);
   const toggleOpenModal = (open) => () => setOpenModal(open);
   const [searchInput, setSearchInput] = useState(null);
@@ -14,30 +21,55 @@ const Search = ({ skeleton, main, placeholder }) => {
 
   return (
     <>
+      {simple && (
+        <Stack
+          direction="row"
+          alignItems="center"
+          borderRadius={1}
+          spacing={1}
+          sx={{ border: "1px solid #c5c5c5", overflow: "clip", width: 250 }}
+        >
+          <IconButton>
+            <SearchRoundedIcon fontSize="small" />
+          </IconButton>
+          <InputBase
+            autoFocus
+            type="text"
+            autoComplete="off"
+            name="search"
+            placeholder={placeholder}
+            sx={{ flex: 1 }}
+            onChange={onChangeSearchInput}
+          />
+        </Stack>
+      )}
+
       {skeleton && (
         <>
           <Modal
             open={openModal}
             onClose={toggleOpenModal(false)}
             slideDirection="down"
-            customStyle={{ padding: "30px 300px" }}
+            customStyle={{ padding: "20px 300px" }}
             element={<Search main placeholder="Search" />}
           />
+
           <Stack
             onClick={toggleOpenModal(true)}
             component="div"
             direction="row"
             alignItems="center"
-            padding="12px"
+            padding="8px 12px"
             borderRadius={1}
-            sx={{ background: "#efefef", cursor: "pointer", width: "100%" }}
+            sx={{ background: "#e9e9e99d", cursor: "pointer", width: 200 }}
           >
             <Stack
+              component="div"
               alignItems="center"
               direction="row"
-              width={"100%"}
-              sx={{ ml: 1, flex: 1, color: "#888" }}
+              spacing={2}
             >
+              <SearchRoundedIcon fontSize="small" />
               <small>Search</small>
             </Stack>
           </Stack>
@@ -55,7 +87,7 @@ const Search = ({ skeleton, main, placeholder }) => {
             sx={{ background: "#fff", overflow: "clip" }}
           >
             <IconButton>
-              <SearchRoundedIcon />
+              <SearchRoundedIcon sx={{ color: "var(--primary-theme)" }} />
             </IconButton>
             <InputBase
               autoFocus
@@ -83,10 +115,18 @@ const Search = ({ skeleton, main, placeholder }) => {
               sx={{
                 background: "#fff",
                 marginTop: 1,
-                padding: 1,
                 borderRadius: 1,
               }}
-            ></Stack>
+            >
+              <MenuList>
+                <MenuItem>
+                  <div>
+                    <span style={{ color: "#999" }}>Search for</span>{" "}
+                    {searchInput}
+                  </div>
+                </MenuItem>
+              </MenuList>
+            </Stack>
           </Collapse>
         </>
       )}

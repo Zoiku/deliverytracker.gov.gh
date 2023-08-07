@@ -1,12 +1,10 @@
-.nav-component {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: #fff;
-}
-
 .nav-web-container {
   display: block;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  left: 0;
+  right: 0;
 }
 
 .nav-mobile-container {
@@ -14,34 +12,29 @@
 }
 
 .nav-web {
-  padding: 20px;
+  height: 80px;
 }
 
 .nav-web-logo-text {
   font-size: 18px;
-  font-weight: 600;
-  color: #333;
-}
-
-.nav-web-logo {
-  height: 100px;
-}
-
-.nav-web-logo img {
-  height: 100%;
-  width: 100%;
+  font-size: 600;
+  color: #c5c5c5;
   cursor: pointer;
-  object-fit: cover;
+}
+
+.nav-web-logo-text-key {
+  font-weight: 800;
+  color: var(--primary-theme);
 }
 
 .nav-web-link {
-  color: #333;
+  color: #c5c5c5;
   text-decoration: none;
   font-size: small;
   padding: 6px 8px;
   transition: all 0.1s ease;
   border-radius: 4px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 @media screen and (max-width: 1150px) {

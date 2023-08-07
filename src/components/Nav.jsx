@@ -1,7 +1,6 @@
 import "../styles/Nav.css";
 import { Stack } from "@mui/material";
-// import NavWebLogo from "../assets/Nav/logo.png";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { NavLinksList } from "../lists/Nav";
 import Search from "./Search";
 import Hamburger from "./Hamburger";
@@ -22,32 +21,33 @@ const Links = () => (
 );
 
 const Nav = () => {
-  const navigate = useNavigate();
-  const navigateTo = (path) => () => navigate(path);
-
   return (
     <div className="nav-component">
       <nav className="nav-web-container">
         <CenteredContainer>
           <Stack
+            component="div"
             className="nav-web"
             direction="row"
             justifyContent="space-between"
             alignItems="center"
           >
-            <Stack
-              direction="row"
-              alignItems="center"
-              className="nav-web-logo-container"
-            ></Stack>
+            <Stack direction="row" spacing={3}>
+              <Stack direction="row" className="nav-web-logo-container">
+                <div className="nav-web-logo-text">
+                  <span className="nav-web-logo-text-key">Promise</span>
+                  {" "}
+                  Delivery Tracker
+                </div>
+              </Stack>
 
-            <Stack
-              direction="row"
-              alignItems="center"
-              spacing={2}
-              className="nav-web-links-container"
-            >
-              <Links />
+              <Stack direction="row" className="nav-web-links-container">
+                <Links />
+              </Stack>
+            </Stack>
+
+            <Stack component="div">
+              <Search skeleton />
             </Stack>
           </Stack>
         </CenteredContainer>
@@ -56,7 +56,7 @@ const Nav = () => {
       <nav className="nav-mobile-container">
         <Stack
           direction="row"
-          justifyContent="space-between"
+          justifyContent="flex-end"
           alignItems="center"
           className="nav-mobile"
           paddingX={2}

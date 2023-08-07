@@ -1,6 +1,6 @@
 export const styles = {
   bmBurgerButton: {
-    height: "15px",
+    height: "20px",
     width: "30px",
     position: "relative",
   },
