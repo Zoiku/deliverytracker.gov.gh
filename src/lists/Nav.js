@@ -7,8 +7,4 @@ export const NavLinksList = [
     label: "Track Promises",
     to: "/promises",
   },
-  {
-    label: "Check Facts",
-    to: "/fact-check",
-  },
 ];

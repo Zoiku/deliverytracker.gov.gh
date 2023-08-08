@@ -1,1 +1,45 @@
+.promise-items {
+  display: grid !important;
+  justify-content: space-between !important;
+  grid-template-columns: repeat(3, 350px) !important;
+  gap: 40px;
+}
 
+.promise-item-container {
+  width: 350px;
+}
+
+.promise-item-name {
+  padding: 10px;
+  border-radius: 5px;
+  background: #e7effd;
+  color: #2270fd;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.promise-item-status-indicator {
+  border: 5px solid;
+  border-radius: 5px;
+}
+
+.promise-item-title {
+  font-size: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.promise-item-more {
+  font-size: small;
+  color: #555;
+}
+
+.promise-colors-help-container {
+  padding: 10px;
+  width: 300px;
+}
+
+.promise-colors-help-title {
+  font-weight: 600;
+}

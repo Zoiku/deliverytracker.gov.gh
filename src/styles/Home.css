@@ -20,5 +20,38 @@
   font-size: larger;
 }
 
+.home-page-section {
+  padding: 100px 0;
+}
+
+.home-page-section-title {
+  text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.home-page-promises-summary-items {
+  background: #efefef58;
+  padding: 50px 0;
+}
+
+.promise-summary-item {
+  text-align: center;
+}
+
+.promise-summary-label {
+  color: gray;
+}
+
+.promise-summary-percentage-value {
+  font-size: 80px;
+  font-weight: 500;
+}
+
+.promise-summary-value {
+  color: var(--primary-theme);
+  font-weight: 500;
+}
+
 @media screen and (max-width: 1024px) {
 }

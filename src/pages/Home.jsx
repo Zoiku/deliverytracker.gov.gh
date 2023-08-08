@@ -5,6 +5,17 @@ import overlayImgSrc2 from "../assets/home/the-artboard-jMZEZ08e9j8-unsplash.jpg
 import { Box, Stack } from "@mui/material";
 import CenteredContainer from "../components/CenteredContainer";
 
+const HomeSection = ({ title, children, backgroundColor = "inherit" }) => (
+  <CenteredContainer backgroundColor={backgroundColor}>
+    <Box className="home-page-section">
+      <Stack spacing={5}>
+        <div className="home-page-section-title">{title}</div>
+        <div className="home-page-section-content">{children}</div>
+      </Stack>
+    </Box>
+  </CenteredContainer>
+);
+
 const Home = () => {
   return (
     <main className="home-page">
@@ -33,6 +44,10 @@ const Home = () => {
           </Box>
         </CenteredContainer>
       </OverlayContainer>
+
+      <HomeSection title="Hon. Annoh-Dompreh Promises Summary"></HomeSection>
+
+      <HomeSection title="Key Promises"></HomeSection>
     </main>
   );
 };

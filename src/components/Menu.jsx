@@ -1,8 +1,8 @@
 import Menu from "@mui/material/Menu";
 import { useState } from "react";
-import { Button } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 
-const MenuComponent = ({ children, label, icon }) => {
+const MenuComponent = ({ children, label, icon, type = "button" }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -14,19 +14,24 @@ const MenuComponent = ({ children, label, icon }) => {
 
   return (
     <>
-      <Button
-        startIcon={icon}
-        onClick={handleClick}
-        size="small"
-        variant="text"
-        sx={{
-          color: "gray",
-          borderColor: "gray",
-          textTransform: "capitalize",
-        }}
-      >
-        <span>{label}</span>
-      </Button>
+      {type === "icon" && <IconButton onClick={handleClick}>{icon}</IconButton>}
+
+      {type === "button" && (
+        <Button
+          startIcon={icon}
+          onClick={handleClick}
+          variant="text"
+          sx={{
+            color: "#24252a",
+            fontWeight: 500,
+            borderColor: "#24252a",
+            textTransform: "capitalize",
+            border: "1px solid #c5c5c5",
+          }}
+        >
+          <span>{label}</span>
+        </Button>
+      )}
 
       <Menu
         elevation={1}
