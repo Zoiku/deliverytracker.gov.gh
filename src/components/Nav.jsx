@@ -35,9 +35,7 @@ const Nav = () => {
             <Stack direction="row" spacing={3}>
               <Stack direction="row" className="nav-web-logo-container">
                 <div className="nav-web-logo-text">
-                  <span className="nav-web-logo-text-key">Promise</span>
-                  {" "}
-                  Delivery Tracker
+                  <span className="nav-web-logo-text-key">Promise</span> Tracker
                 </div>
               </Stack>
 

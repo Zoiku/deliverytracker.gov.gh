@@ -61,16 +61,15 @@ const Search = ({ skeleton, main, simple, placeholder }) => {
             alignItems="center"
             padding="8px 12px"
             borderRadius={1}
-            sx={{ background: "#e9e9e99d", cursor: "pointer", width: 200 }}
+            sx={{
+              border: "1px solid gray",
+              color: "gray",
+              width: 250,
+              cursor: "pointer",
+            }}
           >
-            <Stack
-              component="div"
-              alignItems="center"
-              direction="row"
-              spacing={2}
-            >
-              <SearchRoundedIcon fontSize="small" />
-              <small>Search</small>
+            <Stack component="div" alignItems="center" direction="row">
+              <small>Search website</small>
             </Stack>
           </Stack>
         </>
@@ -99,7 +98,7 @@ const Search = ({ skeleton, main, simple, placeholder }) => {
               onChange={onChangeSearchInput}
             />
             <Slide
-              direction="up"
+              direction="left"
               in={searchInput ? true : false}
               mountOnEnter
               unmountOnExit

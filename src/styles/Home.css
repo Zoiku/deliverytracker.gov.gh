@@ -2,5 +2,23 @@
   height: 100vh;
 }
 
+.home-page-intro-component {
+  height: 100%;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+.home-page-intro-title {
+  font-weight: 800;
+  font-size: 60px;
+  color: #fff;
+}
+
+.home-page-intro-more {
+  color: #c5c5c5;
+  font-size: larger;
+}
+
 @media screen and (max-width: 1024px) {
 }
