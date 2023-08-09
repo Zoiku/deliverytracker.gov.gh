@@ -27,7 +27,10 @@
   font-size: 30px;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.5s ease;
+}
+
+.promise-item-title:hover {
+  text-decoration: underline;
 }
 
 .promise-item-more {

@@ -19,6 +19,7 @@ const ModalComponent = ({
       className="modal-component-container"
       onClose={onClose}
       open={open}
+      disableScrollLock
     >
       <Slide in={open} direction={slideDirection}>
         <Box sx={{ ...styles }}>

@@ -5,9 +5,7 @@ import Menu from "../components/Menu";
 import FilterListRoundedIcon from "@mui/icons-material/FilterListRounded";
 import SortRoundedIcon from "@mui/icons-material/SortRounded";
 import MenuItem from "@mui/material/MenuItem";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import client from "../assets/mp/image.jpg";
-
 const COLORS = {
   1: "rgb(99, 189, 99)",
   2: "orange",
@@ -15,9 +13,18 @@ const COLORS = {
 };
 
 const PromiseItem = ({ title, date, status }) => (
-  <Stack spacing={2} className="promise-item-container">
+  <Stack
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    spacing={2}
+    className="promise-item-container"
+  >
     <Stack direction="row" alignItems="center" spacing={2}>
-      <Avatar sx={{ width: 80, height: 80 }} alt="S" src={client} />
+      <Avatar
+        sx={{ width: 80, height: 80 }}
+        alt="Hon. Frank Annoh-Dompreh"
+        src={client}
+      />
       <div className="promise-item-name">Annoh-Dompreh</div>
     </Stack>
     <div
@@ -42,26 +49,23 @@ const Promises = () => {
             alignItems="flex-end"
             justifyContent="space-between"
           >
-            <Stack sx={{ textTransform: "uppercase", fontWeight: 500 }}>
-              <div>Campaign promises made by Hon. Frank Annoh-Dompreh</div>
+            <Stack sx={{ textTransform: "uppercase" }}>
+              <div style={{ fontWeight: 500 }}>
+                Campaign promises made by Hon. Frank Annoh-Dompreh
+              </div>
+              <div style={{ color: "gray", fontSize: "small" }}>
+                Updated 23 May 2023
+              </div>
             </Stack>
 
             <Stack direction="row" spacing={1}>
-              <Menu type="icon" icon={<InfoOutlinedIcon />}>
-                <Stack spacing={1} className="promise-colors-help-container">
-                  <div className="promise-colors-help-title">
-                    How to intepret status from colors
-                  </div>
-                </Stack>
-              </Menu>
-
               <Menu label="Filter" icon={<FilterListRoundedIcon />}>
-                <MenuItem>Status</MenuItem>
                 <MenuItem>Category</MenuItem>
+                <MenuItem>Status</MenuItem>
               </Menu>
               <Menu label="Sort" icon={<SortRoundedIcon />}>
                 <MenuItem>Most Recent</MenuItem>
-                <MenuItem>Promise Deadline</MenuItem>
+                <MenuItem>Deadline</MenuItem>
               </Menu>
             </Stack>
           </Stack>

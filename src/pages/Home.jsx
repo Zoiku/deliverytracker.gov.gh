@@ -23,11 +23,19 @@ const Home = () => {
         <CenteredContainer>
           <Box className="home-page-intro-component">
             <Stack spacing={1} className="home-page-intro">
-              <div className="home-page-intro-title">
+              <div
+                data-aos="fade-down"
+                data-aos-duration="500"
+                className="home-page-intro-title"
+              >
                 Hon. Frank Annoh-Dompreh
                 <div>Promise Tracker</div>
               </div>
-              <div className="home-page-intro-more">
+              <div
+                data-aos="zoom-in"
+                data-aos-duration="1000"
+                className="home-page-intro-more"
+              >
                 The Biden Promise Tracker monitors the 99 most important
                 campaign promises of President Joseph R. Biden, elected in
                 November 2020. Biden said his top priorities were fighting the

@@ -13,7 +13,7 @@ import Modal from "./Modal";
 import Slide from "@mui/material/Slide";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 
-const Search = ({ skeleton, main, simple, placeholder }) => {
+const Search = ({ skeleton, main, placeholder }) => {
   const [openModal, setOpenModal] = useState(false);
   const toggleOpenModal = (open) => () => setOpenModal(open);
   const [searchInput, setSearchInput] = useState(null);
@@ -21,29 +21,6 @@ const Search = ({ skeleton, main, simple, placeholder }) => {
 
   return (
     <>
-      {simple && (
-        <Stack
-          direction="row"
-          alignItems="center"
-          borderRadius={1}
-          spacing={1}
-          sx={{ border: "1px solid #c5c5c5", overflow: "clip", width: 250 }}
-        >
-          <IconButton>
-            <SearchRoundedIcon fontSize="small" />
-          </IconButton>
-          <InputBase
-            autoFocus
-            type="text"
-            autoComplete="off"
-            name="search"
-            placeholder={placeholder}
-            sx={{ flex: 1 }}
-            onChange={onChangeSearchInput}
-          />
-        </Stack>
-      )}
-
       {skeleton && (
         <>
           <Modal
@@ -62,8 +39,8 @@ const Search = ({ skeleton, main, simple, placeholder }) => {
             padding="8px 12px"
             borderRadius={1}
             sx={{
-              border: "1px solid gray",
-              color: "gray",
+              border: "1px solid #c5c5c5",
+              color: "#c5c5c5",
               width: 250,
               cursor: "pointer",
             }}
@@ -81,7 +58,7 @@ const Search = ({ skeleton, main, simple, placeholder }) => {
             component="form"
             direction="row"
             alignItems="center"
-            padding={1}
+            padding={0.5}
             borderRadius={1}
             sx={{ background: "#fff", overflow: "clip" }}
           >

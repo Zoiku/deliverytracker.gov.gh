@@ -17,13 +17,12 @@
 
 .nav-web-logo-text {
   font-size: 18px;
-  font-size: 600;
+  font-weight: 700;
   color: gray;
   cursor: pointer;
 }
 
 .nav-web-logo-text-key {
-  font-weight: 800;
   color: var(--primary-theme);
 }
 

@@ -3,6 +3,10 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/Home";
 import PromisesPage from "./pages/Promises";
 import FactCheckPage from "./pages/FactCheck";
+import AOS from "aos";
+import 'aos/dist/aos.css';
+
+AOS.init();
 
 const App = () => {
   return (
