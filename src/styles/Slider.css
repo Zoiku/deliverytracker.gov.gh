@@ -12,3 +12,36 @@
   height: 100%;
   object-fit: cover;
 }
+
+.swiper .swiper-button-next,
+.swiper .swiper-button-prev {
+  color: black;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: #efefef;
+}
+
+.swiper .swiper-button-next::after,
+.swiper .swiper-button-prev::after {
+  font-size: inherit;
+  font-weight: bold;
+}
+
+/* .swiper .swiper-button-next {
+  right: -50px;
+  transition: all 0.5s ease;
+}
+
+.swiper .swiper-button-prev {
+  left: -50px;
+  transition: all 0.5s ease;
+}
+
+.swiper:hover .swiper-button-next {
+  right: 15px;
+}
+
+.swiper:hover .swiper-button-prev {
+  left: 15px;
+} */

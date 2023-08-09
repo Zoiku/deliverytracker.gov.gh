@@ -6,6 +6,7 @@ import FilterListRoundedIcon from "@mui/icons-material/FilterListRounded";
 import SortRoundedIcon from "@mui/icons-material/SortRounded";
 import MenuItem from "@mui/material/MenuItem";
 import client from "../assets/mp/image.jpg";
+
 const COLORS = {
   1: "rgb(99, 189, 99)",
   2: "orange",
@@ -13,12 +14,7 @@ const COLORS = {
 };
 
 const PromiseItem = ({ title, date, status }) => (
-  <Stack
-    data-aos="fade-up"
-    data-aos-duration="1000"
-    spacing={2}
-    className="promise-item-container"
-  >
+  <Stack spacing={2} className="promise-item-container">
     <Stack direction="row" alignItems="center" spacing={2}>
       <Avatar
         sx={{ width: 80, height: 80 }}
@@ -92,7 +88,7 @@ const Promises = () => {
               title="Use a national commission to address policing issues"
             />
             <PromiseItem
-              status={1}
+              status={2}
               date="September 28, 2024"
               title="Eliminate mandatory minimums for criminals"
             />

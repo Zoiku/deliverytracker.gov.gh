@@ -34,27 +34,9 @@
   text-transform: uppercase;
 }
 
-.home-page-promises-summary-items {
-  background: #efefef58;
-  padding: 50px 0;
-}
-
-.promise-summary-item {
-  text-align: center;
-}
-
-.promise-summary-label {
-  color: gray;
-}
-
-.promise-summary-percentage-value {
-  font-size: 80px;
-  font-weight: 500;
-}
-
-.promise-summary-value {
-  color: var(--primary-theme);
-  font-weight: 500;
+.key-promise-container {
+  border: 2px solid red;
+  height: 500px;
 }
 
 @media screen and (max-width: 1024px) {

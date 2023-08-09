@@ -6,7 +6,7 @@ const OverlayContainer = ({ children, imgSrcs }) => {
     <div className="overlay-container-component">
       <div className="overlay-image-container">
         <div className="overlay-image">
-          <Slider srcs={imgSrcs} />
+          <Slider overlay srcs={imgSrcs} />
         </div>
       </div>
       <div className="overlay-container">{children}</div>

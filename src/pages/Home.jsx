@@ -4,6 +4,8 @@ import overlayImgSrc1 from "../assets/home/jeffrey-ofori-tOshpNl-sW4-unsplash.jp
 import overlayImgSrc2 from "../assets/home/the-artboard-jMZEZ08e9j8-unsplash.jpg";
 import { Box, Stack } from "@mui/material";
 import CenteredContainer from "../components/CenteredContainer";
+import Slider from "../components/Slider";
+import { SwiperSlide } from "swiper/react";
 
 const HomeSection = ({ title, children, backgroundColor = "inherit" }) => (
   <CenteredContainer backgroundColor={backgroundColor}>
@@ -16,6 +18,12 @@ const HomeSection = ({ title, children, backgroundColor = "inherit" }) => (
   </CenteredContainer>
 );
 
+const KeyPromise = () => (
+  <Stack className="key-promise-container">
+    <div></div>
+    <div></div>
+  </Stack>
+);
 const Home = () => {
   return (
     <main className="home-page">
@@ -31,11 +39,7 @@ const Home = () => {
                 Hon. Frank Annoh-Dompreh
                 <div>Promise Tracker</div>
               </div>
-              <div
-                data-aos="zoom-in"
-                data-aos-duration="1000"
-                className="home-page-intro-more"
-              >
+              <div className="home-page-intro-more">
                 The Biden Promise Tracker monitors the 99 most important
                 campaign promises of President Joseph R. Biden, elected in
                 November 2020. Biden said his top priorities were fighting the
@@ -53,9 +57,15 @@ const Home = () => {
         </CenteredContainer>
       </OverlayContainer>
 
-      <HomeSection title="Hon. Annoh-Dompreh Promises Summary"></HomeSection>
-
-      <HomeSection title="Key Promises"></HomeSection>
+      <HomeSection title="Key Promises">
+        <Box className="key-promises-container">
+          <Slider promises>
+            <SwiperSlide className="key-promise-slide">
+              <KeyPromise />
+            </SwiperSlide>
+          </Slider>
+        </Box>
+      </HomeSection>
     </main>
   );
 };
