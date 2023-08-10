@@ -55,11 +55,10 @@ const Home = () => {
                 Tracking Hon. Frank Annoh-Dompreh's 2023 election commitment
                 promises
               </div>
+              <Box className="promise-chart-container">
+                <PromisesChart />
+              </Box>
             </Stack>
-
-            <Box marginTop={1} className="promise-chart-container">
-              <PromisesChart />
-            </Box>
           </Box>
         </CenteredContainer>
       </OverlayContainer>
