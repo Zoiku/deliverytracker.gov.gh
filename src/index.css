@@ -1,7 +1,12 @@
 :root {
   --primary-text-color: #000;
   --secondary-text-color: #fff;
-  --primary-theme: #007FFF;
+  --primary-theme: #007fff;
+  --promise-kept: rgb(36, 178, 0);
+  --promise-progress: rgb(155, 153, 153);
+  --promise-stalled: #523912;
+  --promise-compromise: rgb(255, 165, 0);
+  --promise-broken: rgb(214, 51, 33);
 }
 
 * {

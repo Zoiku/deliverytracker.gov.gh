@@ -5,6 +5,7 @@ import { NavLinksList } from "../lists/Nav";
 import Search from "./Search";
 import Hamburger from "./Hamburger";
 import CenteredContainer from "./CenteredContainer";
+import { useEffect, useState } from "react";
 
 const Link = ({ label, to }) => (
   <NavLink className="nav-web-link" to={to}>
@@ -21,9 +22,19 @@ const Links = () => (
 );
 
 const Nav = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => setScrollPosition(window.scrollY));
+    return window.removeEventListener("scroll", () => setScrollPosition(0));
+  }, []);
+
   return (
     <div className="nav-component">
-      <nav className="nav-web-container">
+      <nav
+        style={scrollPosition > 50 ? { background: "#fff" } : {}}
+        className="nav-web-container"
+      >
         <CenteredContainer>
           <Stack
             component="div"
@@ -54,11 +65,16 @@ const Nav = () => {
       <nav className="nav-mobile-container">
         <Stack
           direction="row"
-          justifyContent="flex-end"
+          justifyContent="space-between"
           alignItems="center"
           className="nav-mobile"
           paddingX={2}
         >
+          <div>
+            <div className="nav-mobile-logo-text">
+              <span className="nav-web-logo-text-key">Promise</span> Tracker
+            </div>
+          </div>
           <Hamburger />
         </Stack>
       </nav>

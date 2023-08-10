@@ -1,12 +1,8 @@
 .promise-items {
   display: grid !important;
   justify-content: space-between !important;
-  grid-template-columns: repeat(3, 350px) !important;
+  grid-template-columns: repeat(4, 1fr) !important;
   gap: 40px;
-}
-
-.promise-item-container {
-  width: 350px;
 }
 
 .promise-item-name {
@@ -27,6 +23,7 @@
   font-size: 30px;
   font-weight: 700;
   cursor: pointer;
+  position: relative;
 }
 
 .promise-item-title:hover {
@@ -45,4 +42,11 @@
 
 .promise-colors-help-title {
   font-weight: 600;
+}
+
+@media screen and (max-width: 1024px) {
+  .promise-items {
+    grid-template-columns: repeat(1, 1fr) !important;
+    gap: 40px;
+  }
 }

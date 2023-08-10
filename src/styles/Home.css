@@ -7,37 +7,109 @@
   display: grid;
   place-content: center;
   text-align: center;
-}
-
-.home-page-intro {
-  width: 1000px;
+  justify-items: center;
 }
 
 .home-page-intro-title {
   font-weight: 800;
-  font-size: 60px;
-  color: #fff;
+  font-size: 6rem;
+  color: #000;
 }
 
-.home-page-intro-more {
-  color: #c5c5c5;
+.home-page-intro-title-helper-more {
+  color: gray;
+  font-weight: 600;
   font-size: larger;
-}
-
-.home-page-section {
-  padding: 100px 0;
 }
 
 .home-page-section-title {
   text-align: center;
   font-weight: 500;
-  text-transform: uppercase;
+  font-size: larger;
 }
 
-.key-promise-container {
-  border: 2px solid red;
-  height: 500px;
+.home-page-section {
+  padding: 50px 0;
+}
+
+.promise-chart-container {
+  width: 100%;
+}
+
+.key-promises-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.key-promise {
+  border-top: 5px solid;
+  overflow: clip;
+  background: #343a40;
+  position: relative;
+}
+
+.key-promise-image {
+  height: 200px;
+}
+
+.key-promise-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.key-promise-text {
+  padding: 15px;
+  color: #fff;
+  height: 150px;
+}
+
+.key-promise-title {
+  font-size: larger;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.key-promise-title:hover {
+  text-decoration: underline;
+}
+
+.key-promise-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+}
+
+.key-promise-item-status-indicator {
+  border: 5px solid;
+  border-radius: 5px;
+  width: 30px;
+}
+
+.key-promise-item-status-text {
+  font-weight: 600;
+  color: #efefef;
+  font-size: small;
 }
 
 @media screen and (max-width: 1024px) {
+  .home-page-intro-title {
+    font-size: 3rem;
+    letter-spacing: 0;
+  }
+
+  .home-page-intro-title-helper-more {
+    font-size: large;
+  }
+
+  .promise-chart-container {
+    width: 100%;
+  }
+
+  .key-promises-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

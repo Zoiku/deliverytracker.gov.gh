@@ -21,7 +21,6 @@ const MenuComponent = ({ children, label, icon }) => {
         sx={{
           color: "#24252a",
           fontWeight: 500,
-          borderColor: "#24252a",
           textTransform: "capitalize",
           border: "1px solid #c5c5c5",
         }}

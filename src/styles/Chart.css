@@ -1,0 +1,31 @@
+.web-option {
+  display: block !important;
+  width: 100%;
+  height: 100%;
+}
+
+.mobile-option {
+  display: none !important;
+  width: 100%;
+  height: 100%;
+}
+
+.promise-chart-link {
+  color: var(--primary-theme);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.promise-chart-link:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1024px) {
+  .web-option {
+    display: none !important;
+  }
+
+  .mobile-option {
+    display: block !important;
+  }
+}

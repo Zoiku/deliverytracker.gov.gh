@@ -1,8 +1,14 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCreative, Autoplay, Navigation } from "swiper/modules";
+import {
+  EffectCreative,
+  Autoplay,
+  Navigation,
+  EffectFade,
+} from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css";
 import "swiper/css/effect-creative";
+import "swiper/css/effect-fade";
 import "../styles/Slider.css";
 
 const Slider = ({ srcs, overlay, promises, children }) => {
@@ -38,8 +44,9 @@ const Slider = ({ srcs, overlay, promises, children }) => {
 
       {promises && (
         <Swiper
+          effect="fade"
           navigation={true}
-          modules={[Navigation]}
+          modules={[Navigation, EffectFade]}
           spaceBetween={1}
           slidesPerView={1}
         >

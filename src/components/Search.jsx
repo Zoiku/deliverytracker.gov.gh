@@ -12,6 +12,7 @@ import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import Modal from "./Modal";
 import Slide from "@mui/material/Slide";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import CenteredContainer from "./CenteredContainer";
 
 const Search = ({ skeleton, main, placeholder }) => {
   const [openModal, setOpenModal] = useState(false);
@@ -27,8 +28,14 @@ const Search = ({ skeleton, main, placeholder }) => {
             open={openModal}
             onClose={toggleOpenModal(false)}
             slideDirection="down"
-            customStyle={{ padding: "20px 300px" }}
-            element={<Search main placeholder="Search" />}
+            customStyle={{ paddingTop: "25px" }}
+            element={
+              <CenteredContainer>
+                <Stack>
+                  <Search main placeholder="Search" />
+                </Stack>
+              </CenteredContainer>
+            }
           />
 
           <Stack
@@ -39,8 +46,8 @@ const Search = ({ skeleton, main, placeholder }) => {
             padding="8px 12px"
             borderRadius={1}
             sx={{
-              border: "1px solid #c5c5c5",
-              color: "#c5c5c5",
+              border: "2px solid gray",
+              color: "gray",
               width: 250,
               cursor: "pointer",
             }}
@@ -60,7 +67,10 @@ const Search = ({ skeleton, main, placeholder }) => {
             alignItems="center"
             padding={0.5}
             borderRadius={1}
-            sx={{ background: "#fff", overflow: "clip" }}
+            sx={{
+              background: "#fff",
+              overflow: "clip",
+            }}
           >
             <IconButton>
               <SearchRoundedIcon sx={{ color: "var(--primary-theme)" }} />
