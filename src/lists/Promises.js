@@ -6,7 +6,7 @@ export const PromisesList = [
     quote:
       "Biden continues narrower approach on student debt relief as broader plan is retooled",
     deadline: new Date().toDateString(),
-    status: 4,
+    status: 1,
     relevance: 10,
     updatedOn: new Date().toDateString(),
     imgHeader: img,

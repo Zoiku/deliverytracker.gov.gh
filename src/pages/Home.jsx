@@ -46,37 +46,9 @@ const KeyPromise = ({ status, imgSrc, title }) => (
 const Home = () => {
   return (
     <main className="home-page">
-      <OverlayContainer imgSrcs={[overlayImgSrc1, overlayImgSrc2]}>
-        <CenteredContainer>
-          <Box className="home-page-intro-component">
-            <Stack className="home-page-intro">
-              <div className="home-page-intro-title">Promise Tracker</div>
-              <div className="home-page-intro-title-helper-more">
-                Tracking Hon. Frank Annoh-Dompreh's 2023 election commitment
-                promises
-              </div>
-              <Box className="promise-chart-container">
-                <PromisesChart />
-              </Box>
-            </Stack>
-          </Box>
-        </CenteredContainer>
-      </OverlayContainer>
-
-      <HomeSection title="Key Promises">
-        <div className="key-promises-grid">
-          {PromisesList.sort((a, b) => b.relevance - a.relevance)
-            .slice(0, 3)
-            .map((promise, index) => (
-              <KeyPromise
-                key={index}
-                title={promise.title}
-                imgSrc={promise.imgHeader}
-                status={promise.status}
-              />
-            ))}
-        </div>
-      </HomeSection>
+      <OverlayContainer
+        imgSrcs={[overlayImgSrc1, overlayImgSrc2]}
+      ></OverlayContainer>
     </main>
   );
 };

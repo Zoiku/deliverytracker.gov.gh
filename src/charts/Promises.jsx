@@ -30,18 +30,19 @@ export const mobileOptions = {
       max: 100,
       beginAtZero: true,
       ticks: {
-        color: "gray",
+        color: "#fff",
         stepSize: 100,
         display: false,
       },
       grid: {},
     },
     y: {
-      font: {
-        family: "Poppins",
-      },
       ticks: {
-        color: "gray",
+        color: "#fff",
+        font: {
+          family: "Poppins",
+          size: 15,
+        },
       },
       grid: {},
     },
@@ -69,9 +70,10 @@ export const webOptions = {
         color: "gray",
       },
       ticks: {
-        color: "gray",
+        color: "#fff",
         font: {
           family: "Poppins",
+          // size: 15,
           weight: 600,
         },
       },
@@ -91,7 +93,9 @@ export const webOptions = {
     },
   },
   elements: {
-    bar: {},
+    bar: {
+      borderRadius: 5,
+    },
   },
   responsive: true,
   plugins: {
@@ -118,27 +122,19 @@ export const data = {
     {
       label: "Hon. Frank Annoh-Dompreh",
       data: [5, 5, 80, 5, 5],
-      backgroundColor: [
-        "rgb(155, 153, 153)",
-        "rgb(255, 165, 0)",
-        "rgb(36, 178, 0)",
-        "rgb(214, 51, 33)",
-        "#523912",
-      ],
+      backgroundColor: ["#94B9AF", "#9D8420", "#3D664F", "#6E1F0D", "#593837"],
     },
   ],
 };
 
 const PromisesChart = () => {
   return (
-    <Stack spacing={3}>
-      <Bar className="web-option" options={webOptions} data={data} />
+    <Stack sx={{ height: "100%", width: "100%" }} spacing={3}>
+      <Bar className="web-option" options={mobileOptions} data={data} />
       <Bar className="mobile-option" options={mobileOptions} data={data} />
-      <div style={{ color: "gray", fontWeight: 500 }}>
+      <div style={{ color: "#c5c5c5", fontWeight: 500 }}>
         Key promises by Hon. Annoh-Dompreh details.{" "}
-        <span className="promise-chart-link">
-          Track all promises here.
-        </span>
+        <span className="promise-chart-link">Track all promises here.</span>
       </div>
     </Stack>
   );

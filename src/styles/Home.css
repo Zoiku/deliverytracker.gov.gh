@@ -6,23 +6,23 @@
   height: 100%;
   display: grid;
   text-align: center;
-  justify-items: center;
-  align-items: flex-end;
+  place-items: center;
 }
 
 .home-page-intro {
   width: 100%;
-  padding-bottom: 30px;
+  margin-top: 100px;
 }
 
 .home-page-intro-title {
   font-weight: 800;
   font-size: 5rem;
-  color: #000;
+  font-size: 60px;
+  color: gray;
 }
 
 .home-page-intro-title-helper-more {
-  color: gray;
+  color: #fff;
   font-weight: 600;
   font-size: larger;
 }
@@ -34,11 +34,11 @@
 }
 
 .home-page-section {
-  padding: 50px 0;
+  padding: 100px 0;
 }
 
 .promise-chart-container {
-  width: 100%;
+  width: 800px;
 }
 
 .key-promises-grid {
@@ -102,12 +102,13 @@
 
 @media screen and (max-width: 1024px) {
   .home-page-intro-title {
-    font-size: 3rem;
+    font-size: xx-large;
     letter-spacing: 0;
   }
 
   .home-page-intro-title-helper-more {
     font-size: large;
+    font-weight: 400;
   }
 
   .promise-chart-container {
