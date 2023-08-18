@@ -1,57 +1,56 @@
-.home-page .overlay-container-component {
-  height: 100vh;
-}
-
-.home-page-intro-component {
-  height: 100%;
-  display: grid;
-  text-align: center;
-  place-items: center;
-}
-
 .home-page-intro {
+  display: flex;
+  align-items: center;
+}
+
+.home-page-intro > div {
+  width: 50%;
+}
+
+.intro-left {
+  display: flex;
+  justify-content: center;
+}
+
+.intro-left-image {
+  height: 380px;
+  overflow: clip;
+}
+
+.intro-left-image img {
+  height: 100%;
   width: 100%;
-  margin-top: 100px;
+  object-fit: cover;
+  opacity: 0;
 }
 
-.home-page-intro-title {
-  font-weight: 800;
-  font-size: 5rem;
-  font-size: 60px;
+.intro-title {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.intro-helper {
   color: gray;
+  font-size: large;
 }
 
-.home-page-intro-title-helper-more {
-  color: #fff;
-  font-weight: 600;
-  font-size: larger;
+.promise-summaries {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.home-page-section-title {
-  text-align: center;
-  font-weight: 500;
-  font-size: larger;
-}
-
-.home-page-section {
-  padding: 100px 0;
-}
-
-.promise-chart-container {
-  width: 800px;
-}
-
-.key-promises-grid {
+.key-promises {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .key-promise {
-  border-top: 5px solid;
-  overflow: clip;
-  background: #343a40;
+  border-radius: 0 0 10px 10px;
   position: relative;
+  height: 450px;
+  border: 2px solid #c5c5c578;
 }
 
 .key-promise-image {
@@ -64,15 +63,13 @@
   object-fit: cover;
 }
 
-.key-promise-text {
+.key-promise-body {
   padding: 15px;
-  color: #fff;
-  height: 150px;
 }
 
 .key-promise-title {
-  font-size: larger;
-  font-weight: 500;
+  font-size: large;
+  font-weight: 600;
   cursor: pointer;
 }
 
@@ -80,42 +77,42 @@
   text-decoration: underline;
 }
 
-.key-promise-progress {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 15px;
-}
-
-.key-promise-item-status-indicator {
-  border: 5px solid;
-  border-radius: 5px;
-  width: 30px;
-}
-
-.key-promise-item-status-text {
-  font-weight: 600;
-  color: #efefef;
+.key-promise-quote {
+  color: gray;
   font-size: small;
 }
 
+.key-promise-footer {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  padding: 0 20px;
+}
+
+.key-promise-indicator {
+  width: 50%;
+  height: 8px;
+  border-radius: 10px;
+}
+
+.key-promise-status-text {
+  color: #24252a;
+  font-size: small;
+  font-weight: 600;
+}
+
+.chart-container {
+  height: 700px;
+  width: 100%;
+}
+
 @media screen and (max-width: 1024px) {
-  .home-page-intro-title {
-    font-size: xx-large;
-    letter-spacing: 0;
-  }
-
-  .home-page-intro-title-helper-more {
-    font-size: large;
-    font-weight: 400;
-  }
-
-  .promise-chart-container {
+  .chart-container {
     width: 100%;
   }
 
-  .key-promises-grid {
+  .key-promises {
     grid-template-columns: repeat(1, 1fr);
   }
 }

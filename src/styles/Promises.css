@@ -2,7 +2,7 @@
   display: grid !important;
   justify-content: space-between !important;
   grid-template-columns: repeat(4, 1fr) !important;
-  gap: 40px;
+  gap: 50px;
 }
 
 .promise-item-name {
@@ -35,18 +35,8 @@
   color: #555;
 }
 
-.promise-colors-help-container {
-  padding: 10px;
-  width: 300px;
-}
-
-.promise-colors-help-title {
-  font-weight: 600;
-}
-
 @media screen and (max-width: 1024px) {
   .promise-items {
     grid-template-columns: repeat(1, 1fr) !important;
-    gap: 40px;
   }
 }

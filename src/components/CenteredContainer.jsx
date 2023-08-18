@@ -1,21 +1,12 @@
 import "../styles/CenteredContainer.css";
 
-const CenteredContainer = ({
-  children,
-  marginated,
-  backgroundColor = "inherit",
-}) => {
+const CenteredContainer = ({ children, backgroundColor = "inherit" }) => {
   return (
     <div
       className="centered-container-component"
       style={{ background: backgroundColor }}
     >
-      <div
-        style={marginated ? { margin: "50px 0" } : {}}
-        className="centered-container"
-      >
-        {children}
-      </div>
+      <div className="centered-container">{children}</div>
     </div>
   );
 };

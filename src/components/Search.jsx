@@ -43,16 +43,14 @@ const Search = ({ skeleton, main, placeholder }) => {
             component="div"
             direction="row"
             alignItems="center"
-            padding="8px 12px"
-            borderRadius={1}
-            sx={{
-              border: "2px solid gray",
-              color: "gray",
-              width: 250,
-              cursor: "pointer",
-            }}
+            className="skeleton-search-box"
           >
-            <Stack component="div" alignItems="center" direction="row">
+            <Stack
+              component="div"
+              alignItems="center"
+              direction="row"
+              justifyContent="space-between"
+            >
               <small>Search website</small>
             </Stack>
           </Stack>
@@ -65,12 +63,7 @@ const Search = ({ skeleton, main, placeholder }) => {
             component="form"
             direction="row"
             alignItems="center"
-            padding={0.5}
-            borderRadius={1}
-            sx={{
-              background: "#fff",
-              overflow: "clip",
-            }}
+            className="main-search-box"
           >
             <IconButton>
               <SearchRoundedIcon sx={{ color: "var(--primary-theme)" }} />

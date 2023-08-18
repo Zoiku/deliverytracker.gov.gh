@@ -17,10 +17,10 @@ const fontFamily = [
 const ButtonComponent = (props) => {
   const Button = styled(LoadingButton)({
     color: "gray",
+    textTransform: "capitalize",
     borderColor: "gray",
     fontFamily: [...fontFamily].join(","),
     "&:hover": {
-      color: "gray",
       borderColor: "gray",
     },
   });

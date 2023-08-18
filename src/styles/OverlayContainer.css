@@ -1,16 +1,15 @@
 .overlay-container-component {
   position: relative;
-  height: 100%;
 }
 
-.overlay-image-container,
-.overlay-image,
-.overlay-image img {
+.overlay-images-container,
+.overlay-images,
+.overlay-images img {
   height: 100%;
   width: 100%;
 }
 
-.overlay-image img {
+.overlay-images img {
   object-fit: cover;
 }
 
@@ -22,6 +21,9 @@
   right: 0;
   bottom: 0;
   top: 0;
-  background: #000000d8;
   z-index: 1;
+}
+
+.overlay-shadow {
+  background: black;
 }

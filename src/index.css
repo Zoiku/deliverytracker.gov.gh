@@ -1,12 +1,14 @@
 :root {
   --primary-text-color: #000;
   --secondary-text-color: #fff;
-  --primary-theme: #007fff;
-  --promise-kept: rgb(36, 178, 0);
-  --promise-progress: rgb(155, 153, 153);
-  --promise-stalled: #523912;
-  --promise-compromise: rgb(255, 165, 0);
-  --promise-broken: rgb(214, 51, 33);
+  --third-text-color: #24252a;
+  --primary-theme: #005ec9;
+  --primary-theme-deep: #0054a8;
+  --promise-kept: rgba(36, 178, 0, 0.6);
+  --promise-progress: rgba(55, 0, 55, 0.6);
+  --promise-stalled: rgba(0, 0, 255, 0.6);
+  --promise-compromise: rgba(255, 166, 1, 0.6);
+  --promise-broken: rgba(214, 51, 33, 0.6);
 }
 
 * {

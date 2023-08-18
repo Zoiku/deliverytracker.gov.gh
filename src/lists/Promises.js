@@ -1,6 +1,6 @@
 import img from "../assets/home/jeffrey-ofori-tOshpNl-sW4-unsplash.jpg";
 
-export const PromisesList = [
+export const PromiseList = [
   {
     title: "Double number of immigration judges and staff",
     quote:
@@ -10,6 +10,7 @@ export const PromisesList = [
     relevance: 10,
     updatedOn: new Date().toDateString(),
     imgHeader: img,
+    id: 1
   },
   {
     title: "Use a national commission to address policing issues",
@@ -20,6 +21,7 @@ export const PromisesList = [
     relevance: 5,
     updatedOn: new Date().toDateString(),
     imgHeader: img,
+    id: 2
   },
   {
     title: "Update the Voting Rights Act",
@@ -30,6 +32,7 @@ export const PromisesList = [
     relevance: 9,
     updatedOn: new Date().toDateString(),
     imgHeader: img,
+    id: 3
   },
   {
     title: "Guarantee 7 days of paid sick leave",
@@ -40,16 +43,18 @@ export const PromisesList = [
     relevance: 5,
     updatedOn: new Date().toDateString(),
     imgHeader: img,
+    id: 4
   },
   {
     title: "Establish new fuel economy standards",
     quote:
       "Biden continues narrower approach on student debt relief as broader plan is retooled",
     deadline: new Date().toDateString(),
-    status: 5,
+    status: 1,
     relevance: 5,
     updatedOn: new Date().toDateString(),
     imgHeader: img,
+    id: 5
   },
   {
     title: "Enact domestic terrorism law",
@@ -60,6 +65,7 @@ export const PromisesList = [
     relevance: 5,
     updatedOn: new Date().toDateString(),
     imgHeader: img,
+    id: 6
   },
   {
     title: "Offer universal preschool to 3 and 4-year-olds",
@@ -70,15 +76,17 @@ export const PromisesList = [
     relevance: 11,
     updatedOn: new Date().toDateString(),
     imgHeader: img,
+    id: 7
   },
   {
     title: "Use a national commission to address policing issues",
     quote:
       "Biden continues narrower approach on student debt relief as broader plan is retooled",
     deadline: new Date().toDateString(),
-    status: 2,
+    status: 1,
     relevance: 5,
     updatedOn: new Date().toDateString(),
     imgHeader: img,
+    id: 8
   },
 ];
