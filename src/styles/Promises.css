@@ -15,15 +15,21 @@
 }
 
 .promise-item-status-indicator {
-  border: 5px solid;
+  border: 4px solid;
   border-radius: 5px;
 }
 
 .promise-item-title {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 700;
   cursor: pointer;
   position: relative;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  white-space: normal;
 }
 
 .promise-item-title:hover {
@@ -31,8 +37,13 @@
 }
 
 .promise-item-more {
-  font-size: small;
   color: #555;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  white-space: normal;
 }
 
 @media screen and (max-width: 1024px) {

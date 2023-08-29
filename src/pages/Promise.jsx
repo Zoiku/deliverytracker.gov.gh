@@ -7,18 +7,21 @@ import { COLORS, STATUS } from "./Promises";
 import Timeline from "../components/Timeline";
 import { EventList } from "../lists/Events";
 
-const PromiseStack = ({ title, children }) => (
-  <Stack className="promise-body" spacing={1}>
+const PromiseStack = ({ title, titleHelper, children }) => (
+  <Stack className="promise-body" spacing={2}>
     {title && (
-      <div
-        style={{
-          fontSize: "x-large",
-          fontWeight: 600,
-          color: "var(--third-text-color)",
-        }}
-      >
-        {title}
-      </div>
+      <Stack>
+        <div
+          style={{
+            fontSize: "large",
+            fontWeight: 600,
+            color: "var(--third-text-color)",
+          }}
+        >
+          {title}
+        </div>
+        {titleHelper && <div style={{ color: "GrayText" }}>{titleHelper}</div>}
+      </Stack>
     )}
     <div>{children}</div>
   </Stack>
@@ -56,30 +59,44 @@ const PromiseComponent = () => {
                 style={{ background: COLORS[promise.status] }}
                 className="promise-header-image-status"
               >
-                {STATUS[promise.status]}
+                <div className="promise-header-image-status-text">
+                  {STATUS[promise.status]}
+                </div>
               </div>
               <img src={promise.imgHeader} alt="" />
             </div>
             <div
               style={{ borderColor: COLORS[promise.status] }}
               className="promise-status-bar"
-            >
-              <Stack direction="row" alignItems="center" spacing={2} />
-            </div>
+            />
           </div>
 
           <div className="promises-bodies">
-            <PromiseStack title="Promise Overview">
-              <div
-                className="promise-overview"
-                style={{
-                  borderColor: COLORS[promise.status],
-                }}
+            <Stack spacing={5}>
+              <PromiseStack
+                title="Overview"
+                titleHelper="Hon Frank Annoh-Dompreh said this about this Promise"
               >
-                {promise.more}
-              </div>
-            </PromiseStack>
-            <PromiseStack title="Timeline of Updates">
+                <div
+                  className="promise-overview"
+                  style={{
+                    borderColor: COLORS[promise.status],
+                  }}
+                >
+                  {promise.more}
+                </div>
+              </PromiseStack>
+
+              <PromiseStack
+                title="Media/Gallery"
+                titleHelper="Find all media evidence regarding the progress of the Promise"
+              ></PromiseStack>
+            </Stack>
+
+            <PromiseStack
+              title="Timeline"
+              titleHelper="Chronological order of Promise progress"
+            >
               <Timeline dotsColor={COLORS[promise.status]} events={EventList} />
             </PromiseStack>
           </div>

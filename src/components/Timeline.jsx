@@ -9,7 +9,7 @@ import { Stack } from "@mui/material";
 const TimelineComponent = ({ events, dotsColor }) => {
   return (
     <Timeline
-      style={{ margin: 0, padding: 0 }}
+      style={{ margin: 0, padding: 0, height: "100%" }}
       sx={{
         [`& .${timelineItemClasses.root}:before`]: {
           flex: 0,

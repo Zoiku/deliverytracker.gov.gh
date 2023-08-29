@@ -1,6 +1,6 @@
 import "../styles/Nav.css";
 import { Stack } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { NavLinksList } from "../lists/Nav";
 import Search from "./Search";
 import Hamburger from "./Hamburger";
@@ -23,6 +23,7 @@ const Links = () => (
 
 const Nav = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.addEventListener("scroll", () => setScrollPosition(window.scrollY));
@@ -44,9 +45,14 @@ const Nav = () => {
             alignItems="center"
           >
             <Stack direction="row" spacing={3}>
-              <Stack direction="row" className="nav-web-logo-container">
+              <Stack
+                onClick={() => navigate("/")}
+                direction="row"
+                className="nav-web-logo-container"
+              >
                 <div className="nav-web-logo-text">
-                  <span className="nav-web-logo-text-key">Delivering</span> Promises
+                  <span className="nav-web-logo-text-key">Delivering</span>{" "}
+                  Promises
                 </div>
               </Stack>
 
@@ -70,7 +76,7 @@ const Nav = () => {
           className="nav-mobile"
           paddingX={2}
         >
-          <div>
+          <div onClick={() => navigate("/")}>
             <div className="nav-mobile-logo-text">
               <span className="nav-web-logo-text-key">Promise</span> Tracker
             </div>

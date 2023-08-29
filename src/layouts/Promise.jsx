@@ -19,13 +19,10 @@ const Layout = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
               cum, ad vero harum corporis delectus quae beatae rem obcaecati
               officia corrupti architecto ipsam? Error blanditiis dolores rem
-              distinctio, atque fuga saepe amet nam aliquid earum sequi tenetur
-              eos! Doloribus beatae rem odio, quia aperiam reiciendis harum ipsa
               suscipit iure omnis illum molestiae facere sed!
             </div>
             <div>
               iure nulla sapiente, modi laborum, ullam earum sit aspernatur
-              adipisci eius minus. Perspiciatis, modi. Sapiente vitae aspernatur
               fugit voluptatum commodi, tempora reiciendis quidem perferendis
               quia ullam qui magni odio impedit totam rem adipisci voluptate
               corrupti

@@ -44,9 +44,7 @@ const PromiseItem = ({ title, date, status, quote, id }) => {
       >
         {title}
       </div>
-      <div className="promise-item-more">
-        {quote} | {date}
-      </div>
+      <div className="promise-item-more">{quote}</div>
     </Stack>
   );
 };
@@ -57,17 +55,6 @@ const Promises = () => {
       <CenteredContainer>
         <Box>
           <Stack spacing={4}>
-            <Stack spacing={1}>
-              <div style={{ fontWeight: 600 }}>
-                Campaign Promises made by Hon. Frank Annoh-Dompreh
-              </div>
-              <div
-                style={{ fontWeight: 500, fontSize: "small", color: "gray" }}
-              >
-                Updated on 23 May 2023
-              </div>
-            </Stack>
-
             <Stack direction="row" className="promise-items">
               {PromiseList.map((promise) => (
                 <PromiseItem
