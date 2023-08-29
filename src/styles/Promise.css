@@ -1,0 +1,78 @@
+.promise-header-title-container {
+  position: sticky;
+}
+
+.promise-header-title {
+  font-size: 60px;
+  font-weight: 800;
+}
+
+.promise-header-image {
+  height: 500px;
+  width: 100%;
+  overflow: clip;
+  position: relative;
+}
+
+.promise-header-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.promise-header-image-status {
+  position: absolute;
+  width: 35%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  color: #fff;
+  font-size: x-large;
+  font-weight: 600;
+}
+
+.promise-status-bar {
+  border-top: 10px solid;
+  padding: 15px 0 0 0;
+  font-weight: 600;
+}
+
+.promise-status-indicator {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.promises-bodies {
+  display: flex;
+  gap: 50px;
+}
+
+.promise-overview {
+  padding: 0 0 0 20px;
+  border-left: 5px solid;
+}
+
+.promise-body {
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .promise-header-title {
+    font-size: xx-large;
+  }
+
+  .promise-header-image {
+    height: 250px;
+  }
+
+  .promise-header-image-status {
+    width: 40%;
+    font-size: small;
+  }
+
+  .promises-bodies {
+    gap: 50px;
+    flex-direction: column;
+  }
+}

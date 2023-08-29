@@ -1,37 +1,5 @@
-.home-page-intro {
-  display: flex;
-  align-items: center;
-}
-
-.home-page-intro > div {
-  width: 50%;
-}
-
-.intro-left {
-  display: flex;
-  justify-content: center;
-}
-
-.intro-left-image {
-  height: 380px;
-  overflow: clip;
-}
-
-.intro-left-image img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  opacity: 0;
-}
-
-.intro-title {
-  font-size: 50px;
-  font-weight: 700;
-}
-
-.intro-helper {
-  color: gray;
-  font-size: large;
+.home-page-introduction {
+  text-align: center;
 }
 
 .promise-summaries {

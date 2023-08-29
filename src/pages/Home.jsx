@@ -5,12 +5,13 @@ import Chart from "../charts/Chart";
 import { PromiseList } from "../lists/Promises";
 import { COLORS, STATUS } from "./Promises";
 import { useNavigate } from "react-router-dom";
-import client from "../assets/mp/image-1.png";
 
 const HomeSection = ({ title, children }) => (
   <CenteredContainer>
     <Stack spacing={3}>
-      <div style={{ textAlign: "center", fontWeight: 600 }}>{title}</div>
+      <div style={{ textAlign: "center", fontWeight: 600, fontSize: "large" }}>
+        {title}
+      </div>
       <Box>{children}</Box>
     </Stack>
   </CenteredContainer>
@@ -63,28 +64,7 @@ const Home = () => {
   return (
     <main className="home-page">
       <Stack spacing={10}>
-        <CenteredContainer>
-          <div spacing={1} className="home-page-intro">
-            <div className="intro-left">
-              <div className="intro-left-image">
-                <img src={client} alt="Hon. Annoh-Dompreh" />
-              </div>
-            </div>
-            <Stack spacing={2} className="intro-right">
-              <div className="intro-title">Promise Tracker</div>
-              <div className="intro-helper">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque,
-                necessitatibus? Ipsa a eveniet aut in mollitia natus
-                exercitationem quia eligendi quasi possimus, sequi maxime! Quasi
-                sapiente placeat fugiat. Nostrum, amet vel incidunt et optio
-                consequuntur unde eius earum quod dignissimos, ab deserunt
-                minima at fugit mollitia cupiditate. At, blanditiis est.
-              </div>
-            </Stack>
-          </div>
-        </CenteredContainer>
-
-        <HomeSection title="Promises Summary">
+        {/* <HomeSection title="Promises Summary">
           <Stack>
             <div className="promise-summaries">
               <PromiseSummary label="Delivered Promises" value={40} />
@@ -100,7 +80,7 @@ const Home = () => {
               <Chart />
             </Box>
           </Stack>
-        </HomeSection>
+        </HomeSection> */}
 
         <HomeSection title="Recent Deliveries">
           <div className="key-promises">

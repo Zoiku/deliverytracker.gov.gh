@@ -1,3 +1,9 @@
 .outlet-body {
-  padding: 100px 0;
+  padding: 150px 0 0 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .outlet-body {
+    padding: 100px 0 0 0;
+  }
 }
