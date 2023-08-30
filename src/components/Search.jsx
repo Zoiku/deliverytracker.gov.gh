@@ -1,13 +1,6 @@
 import "../styles/Search.css";
 import { useState } from "react";
-import {
-  Collapse,
-  IconButton,
-  InputBase,
-  MenuItem,
-  MenuList,
-  Stack,
-} from "@mui/material";
+import { Collapse, IconButton, InputBase, Stack } from "@mui/material";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import Modal from "./Modal";
 import Slide from "@mui/material/Slide";
@@ -95,16 +88,10 @@ const Search = ({ skeleton, main, placeholder }) => {
                 background: "#fff",
                 marginTop: 1,
                 borderRadius: 1,
+                padding: 2,
               }}
             >
-              <MenuList>
-                <MenuItem>
-                  <div>
-                    <span style={{ color: "#999" }}>Search for</span>{" "}
-                    {searchInput}
-                  </div>
-                </MenuItem>
-              </MenuList>
+              {searchInput}
             </Stack>
           </Collapse>
         </>

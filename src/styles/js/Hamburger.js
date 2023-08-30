@@ -11,6 +11,8 @@ export const styles = {
   bmCrossButton: {
     height: "24px",
     width: "24px",
+    top: 26,
+    right: 14,
   },
   bmCross: {
     background: "#fff",

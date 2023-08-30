@@ -10,4 +10,13 @@
 .hamburger-content {
   height: 100%;
   width: 100%;
+  padding: 10px;
+}
+
+.hamburger-menu-nav {
+  height: 100px;
+  width: 100% !important;
+  border: 2px solid red;
+  font-size: x-large;
+  color: #fff;
 }

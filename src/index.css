@@ -6,6 +6,7 @@
   /* Theme Colors */
   --primary-theme: #005ec9;
   --primary-theme-deep: #0054a8;
+  --primary-theme-light: #438ed8;
   /* Promises Status Color */
   --promise-status-unstarted: rgba(170, 170, 170, 0.6);
   --promise-status-progress: rgba(67, 135, 116, 0.6);

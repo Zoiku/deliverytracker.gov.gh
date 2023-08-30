@@ -64,7 +64,7 @@ const PromiseComponent = () => {
                   {STATUS[promise.status]}
                 </div>
               </div>
-              <img src={promise.imgHeader} alt="" />
+              <img loading="lazy" src={promise.imgHeader} alt="" />
             </div>
             <div
               style={{ borderColor: COLORS[promise.status] }}

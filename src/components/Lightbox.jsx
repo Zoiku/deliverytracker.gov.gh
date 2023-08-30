@@ -1,17 +1,43 @@
 import { useState } from "react";
+import "../styles/Lighbox.css";
+import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
+import "yet-another-react-lightbox/plugins/captions.css";
+import Lightbox from "yet-another-react-lightbox";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
+import Share from "yet-another-react-lightbox/plugins/share";
+import Captions from "yet-another-react-lightbox/plugins/captions";
 
-const LightboxComponent = () => {
+const LightboxComponent = ({ gallery }) => {
   const [openGallery, setOpenGallery] = useState(false);
   const toggleOpenGallery = (open) => () => {
     setOpenGallery(open);
   };
 
-  return (
+  return gallery ? (
     <div>
-      {openGallery && <></>}
-      <div onClick={toggleOpenGallery(true)}>View Gallery</div>
+      <Lightbox
+        open={openGallery}
+        close={toggleOpenGallery(false)}
+        plugins={[Fullscreen, Share, Thumbnails, Captions]}
+        captions={{
+          showToggle: true,
+          descriptionMaxLines: 5,
+          descriptionTextAlign: "center",
+        }}
+        slides={gallery.map((img) => {
+          return {
+            src: img.src,
+            description: img.description,
+          };
+        })}
+      />
+      <div className="lightbox-view-text" onClick={toggleOpenGallery(true)}>
+        View Gallery
+      </div>
     </div>
-  );
+  ) : null;
 };
 
 export default LightboxComponent;

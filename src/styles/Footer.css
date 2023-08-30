@@ -1,0 +1,38 @@
+.footer-sections {
+  padding: 50px 0;
+  display: flex;
+  gap: 100px;
+}
+
+.footer-section {
+  width: 100%;
+}
+
+.footer-copyright {
+  border-top: 1px solid rgba(128, 128, 128, 0.5);
+  padding: 20px 0 50px;
+  color: #c5c5c5;
+}
+
+.footer-sections li {
+  list-style-position: inside;
+  cursor: pointer;
+}
+
+.footer-sections li:hover {
+  color: #fff;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer-sections {
+    padding: 40px 0;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer-copyright {
+    border-top: 1px solid rgba(128, 128, 128, 0.5);
+    padding: 20px 0;
+    color: #c5c5c5;
+  }
+}
