@@ -75,7 +75,7 @@ const PromiseComponent = () => {
             <Stack spacing={5}>
               <PromiseStack
                 title="Overview"
-                titleHelper="Hon Frank Annoh-Dompreh said this about this Promise"
+                titleHelper="Hon Frank Annoh-Dompreh said this about the Promise"
               >
                 <div
                   className="promise-overview"
@@ -86,17 +86,9 @@ const PromiseComponent = () => {
                   {promise.more}
                 </div>
               </PromiseStack>
-
-              <PromiseStack
-                title="Media/Gallery"
-                titleHelper="Find all media evidence regarding the progress of the Promise"
-              ></PromiseStack>
             </Stack>
 
-            <PromiseStack
-              title="Timeline"
-              titleHelper="Chronological order of Promise progress"
-            >
+            <PromiseStack title="Timeline" titleHelper="Updates on the Promise">
               <Timeline dotsColor={COLORS[promise.status]} events={EventList} />
             </PromiseStack>
           </div>

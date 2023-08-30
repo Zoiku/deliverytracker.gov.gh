@@ -14,20 +14,6 @@ const Layout = () => {
           <h1 style={{ color: "var(--third-text-color)" }}>
             Delivering Promises
           </h1>
-          <Stack spacing={1}>
-            <div>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-              cum, ad vero harum corporis delectus quae beatae rem obcaecati
-              officia corrupti architecto ipsam? Error blanditiis dolores rem
-              suscipit iure omnis illum molestiae facere sed!
-            </div>
-            <div>
-              iure nulla sapiente, modi laborum, ullam earum sit aspernatur
-              fugit voluptatum commodi, tempora reiciendis quidem perferendis
-              quia ullam qui magni odio impedit totam rem adipisci voluptate
-              corrupti
-            </div>
-          </Stack>
         </Stack>
       </CenteredContainer>
     </Stack>
