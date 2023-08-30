@@ -1,0 +1,9 @@
+.promise-footer-section-title {
+  color: var(--third-text-color);
+}
+
+@media screen and (max-width: 1150px) {
+  .promise-footer-section-title {
+    font-size: xx-large;
+  }
+}

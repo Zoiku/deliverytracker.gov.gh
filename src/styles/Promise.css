@@ -27,14 +27,13 @@
   display: grid;
   place-content: center;
   color: #fff;
-  font-size: x-large;
-  font-weight: 600;
+  font-size: large;
   overflow: clip;
   transition: all 0.3s ease;
 }
 
 .promise-header-image-status-text {
-  width: 250px;
+  white-space: nowrap;
 }
 
 .promise-header-image:hover .promise-header-image-status {
@@ -47,17 +46,43 @@
 
 .promises-bodies {
   display: flex;
+  justify-content: space-between;
   height: 100%;
-  gap: 70px;
+  gap: 50px;
+  width: 100%;
+}
+
+.promise-sections-container {
+  width: 80%;
+}
+
+.promise-sections {
+  color: gray;
 }
 
 .promise-overview {
-  padding: 0 0 0 20px;
+  padding: 10px 20px;
   border-left: 5px solid;
+  background: #f3f5f8;
+  font-weight: 500;
+  color: var(--third-text-color);
+  border-radius: 0 5px 5px 0;
+}
+
+.promise-category-tag {
+  padding: 10px;
+  background: #f3f5f8;
+  display: inline-block;
+  border-radius: 5px;
+  font-size: small;
+  font-weight: 600;
+}
+
+.promise-category-tag:not(:last-child) {
+  margin: 5px 5px 5px 0;
 }
 
 .promise-body {
-  width: 100%;
   height: 100%;
 }
 
@@ -71,20 +96,19 @@
   }
 
   .promise-header-image-status {
-    font-size: medium;
+    font-size: small;
   }
 
-  .promise-header-image-status-text {
-    width: 100%;
+  .promise-header-image:hover .promise-header-image-status {
+    width: 50%;
   }
 
   .promises-bodies {
-    gap: 50px;
+    gap: 30px;
     flex-direction: column;
   }
 
-  .promise-overview {
-    background: #efefef5e;
-    padding: 10px;
+  .promise-sections-container {
+    width: 100%;
   }
 }

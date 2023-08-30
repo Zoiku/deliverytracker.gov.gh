@@ -11,12 +11,12 @@
   background: #e7effd;
   color: #2270fd;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .promise-item-status-indicator {
   border: 4px solid;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 .promise-item-title {

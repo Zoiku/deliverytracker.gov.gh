@@ -3,12 +3,13 @@ import { useEffect, useState } from "react";
 import { PromiseList } from "../lists/Promises";
 import { Stack } from "@mui/material";
 import quoteIcon from "../assets/icons/icons8-quote-100.png";
-import { COLORS, STATUS } from "./Promises";
+import { COLORS } from "./Promises";
+import { CATEGORY, STATUS } from "../lists/Filters";
 import Timeline from "../components/Timeline";
 import { EventList } from "../lists/Events";
 
-const PromiseStack = ({ title, titleHelper, children }) => (
-  <Stack className="promise-body" spacing={2}>
+const PromiseStack = ({ title, titleHelper, children, className }) => (
+  <Stack className={`promise-body ${className}`} spacing={3}>
     {title && (
       <Stack>
         <div
@@ -72,23 +73,47 @@ const PromiseComponent = () => {
           </div>
 
           <div className="promises-bodies">
-            <Stack spacing={5}>
-              <PromiseStack
-                title="Overview"
-                titleHelper="Hon Frank Annoh-Dompreh said this about the Promise"
-              >
-                <div
-                  className="promise-overview"
-                  style={{
-                    borderColor: COLORS[promise.status],
-                  }}
-                >
-                  {promise.more}
-                </div>
-              </PromiseStack>
-            </Stack>
+            <PromiseStack
+              className="promise-sections-container"
+              title="Overview"
+              titleHelper="More about this Promise"
+            >
+              <Stack spacing={3}>
+                <Stack spacing={2}>
+                  {promise.categories && promise.categories.length > 0 && (
+                    <div className="promise-category-tags">
+                      {promise.categories.map((category, index) => (
+                        <div key={index} className="promise-category-tag">
+                          {CATEGORY[category]}
+                        </div>
+                      ))}
+                    </div>
+                  )}
 
-            <PromiseStack title="Timeline" titleHelper="Updates on the Promise">
+                  <div
+                    className="promise-overview"
+                    style={{
+                      borderColor: COLORS[promise.status],
+                    }}
+                  >
+                    {promise.overview}
+                  </div>
+                </Stack>
+
+                <Stack spacing={2} className="promise-sections">
+                  {promise.sections &&
+                    promise.sections.length > 0 &&
+                    promise.sections.map((section, index) => (
+                      <div key={index}>{section}</div>
+                    ))}
+                </Stack>
+              </Stack>
+            </PromiseStack>
+
+            <PromiseStack
+              title="Timeline"
+              titleHelper="Event updates on the Promise"
+            >
               <Timeline dotsColor={COLORS[promise.status]} events={EventList} />
             </PromiseStack>
           </div>

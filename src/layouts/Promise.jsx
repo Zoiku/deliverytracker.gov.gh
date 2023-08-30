@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { Stack } from "@mui/material";
 import CenteredContainer from "../components/CenteredContainer";
+import "../styles/Promise.layout.css";
 
 const Layout = () => {
   return (
@@ -9,10 +10,10 @@ const Layout = () => {
         <Outlet />
       </CenteredContainer>
 
-      <CenteredContainer backgroundColor="#efefef">
-        <Stack paddingY={5} spacing={2}>
-          <h1 style={{ color: "var(--third-text-color)" }}>
-            Delivering Promises
+      <CenteredContainer backgroundColor="#f3f5f8">
+        <Stack className="promise-footer-section" paddingY={5} spacing={2}>
+          <h1 className="promise-footer-section-title">
+            Tracking Hon. Frank Annoh-Dompreh
           </h1>
         </Stack>
       </CenteredContainer>

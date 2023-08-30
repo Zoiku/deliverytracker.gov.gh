@@ -1,0 +1,13 @@
+.timline-action-points {
+  font-size: small;
+}
+
+.timline-action-points > div:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.timeline-view-gallery-text {
+  font-weight: 600;
+  display: inline-block;
+  cursor: pointer;
+}

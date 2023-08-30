@@ -1,34 +1,27 @@
 import "../styles/Promises.css";
+import client from "../assets/mp/image.jpg";
 import CenteredContainer from "../components/CenteredContainer";
 import { Avatar, Box, Stack } from "@mui/material";
-import client from "../assets/mp/image.jpg";
 import { PromiseList } from "../lists/Promises";
 import { useNavigate } from "react-router-dom";
 
 export const COLORS = {
-  1: "var(--promise-kept)",
-  2: "var(--promise-compromise",
-  3: "var(--promise-broken)",
-  4: "var(--promise-stalled)",
-  5: "var(--promise-progress)",
+  1: "var(--promise-status-unstarted)",
+  2: "var(--promise-status-progress)",
+  3: "var(--promise-status-stalled)",
+  4: "var(--promise-status-delivered)",
+  5: "var(--promise-status-compromised)",
+  6: "var(--promise-status-broken)",
 };
 
-export const STATUS = {
-  1: "Delivered Promise",
-  2: "Compromised Delivery",
-  3: "Broken Promise",
-  4: "Promise Stalled",
-  5: "In Progress",
-};
-
-const PromiseItem = ({ title, date, status, quote, id }) => {
+const PromiseItem = ({ title, status, overview, id }) => {
   const navigate = useNavigate();
 
   return (
     <Stack spacing={2} className="promise-item-container">
       <Stack direction="row" alignItems="center" spacing={2}>
         <Avatar
-          sx={{ width: 80, height: 80 }}
+          sx={{ width: 70, height: 70 }}
           alt="Hon. Frank Annoh-Dompreh"
           src={client}
         />
@@ -44,7 +37,7 @@ const PromiseItem = ({ title, date, status, quote, id }) => {
       >
         {title}
       </div>
-      <div className="promise-item-more">{quote}</div>
+      <div className="promise-item-more">{overview}</div>
     </Stack>
   );
 };
@@ -53,15 +46,20 @@ const Promises = () => {
   return (
     <main className="promises-page">
       <CenteredContainer>
-        <Box>
-          <Stack spacing={4}>
+        <Box paddingBottom={10}>
+          <Stack spacing={8}>
+            <Stack>
+              
+            </Stack>
+
             <Stack direction="row" className="promise-items">
-              {PromiseList.map((promise) => (
+              {PromiseList.map((promise, index) => (
                 <PromiseItem
+                  key={index}
                   status={promise.status}
                   date={promise.updatedOn}
                   title={promise.title}
-                  quote={promise.quote}
+                  overview={promise.overview}
                   id={promise.id}
                 />
               ))}

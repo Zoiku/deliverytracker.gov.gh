@@ -51,8 +51,8 @@ const Nav = () => {
                 className="nav-web-logo-container"
               >
                 <div className="nav-web-logo-text">
-                  <span className="nav-web-logo-text-key">Delivering</span>{" "}
-                  Promises
+                  <span className="nav-web-logo-text-key">Promise</span>{" "}
+                  Tracker
                 </div>
               </Stack>
 

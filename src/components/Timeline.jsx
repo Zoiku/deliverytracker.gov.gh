@@ -4,7 +4,8 @@ import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
-import { Stack } from "@mui/material";
+import Lightbox from "./Lightbox";
+import "../styles/Timelines.css";
 
 const TimelineComponent = ({ events, dotsColor }) => {
   return (
@@ -18,18 +19,21 @@ const TimelineComponent = ({ events, dotsColor }) => {
       }}
     >
       {events &&
-        events.map((event) => (
-          <TimelineItem>
+        events.map((event, index) => (
+          <TimelineItem key={index}>
             <TimelineSeparator>
               <TimelineDot sx={{ background: dotsColor }} />
               <TimelineConnector />
             </TimelineSeparator>
 
             <TimelineContent>
-              <Stack spacing={0}>
+              <div className="timline-action-points">
                 <div>{event.date}</div>
                 <div>{event.about}</div>
-              </Stack>
+                <div className="timeline-view-gallery-text">
+                  <Lightbox gallery={event.gallery} />
+                </div>
+              </div>
             </TimelineContent>
           </TimelineItem>
         ))}
