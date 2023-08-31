@@ -14,36 +14,39 @@ const FooterSection = ({ title, children }) => {
 const Footer = () => {
   return (
     <CenteredContainer backgroundColor="var(--third-text-color)">
-      <Box color="#fff" className="footer-sections">
-        <FooterSection
-          title={
-            <div>
-              <span style={{ color: "var(--primary-theme-light)" }}>
-                Promise
-              </span>{" "}
-              Tracker
-            </div>
-          }
-        >
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea facilis
-          repellendus tempora est repudiandae doloribus, consectetur labore
-          accusamus beatae sed.
-        </FooterSection>
-        <FooterSection title="Quick Links">
-          <ul>
-            <li>Home</li>
-            <li>Track Promises</li>
-          </ul>
-        </FooterSection>
-        <FooterSection title="Newsletter">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea facilis
-          repellendus tempora est repudiandae doloribus, consectetur labore
-          accusamus beatae sed.
-        </FooterSection>
-      </Box>
-      <Box className="footer-copyright">
-        Copyright@{new Date().getFullYear()}. All Rights Reserved by copyright
-      </Box>
+      <div className="footer-component">
+        <Box color="#fff" className="footer-sections">
+          <FooterSection
+            title={
+              <div>
+                <span style={{ color: "var(--primary-theme-light)" }}>
+                  Promise
+                </span>{" "}
+                Tracker
+              </div>
+            }
+          >
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea facilis
+            repellendus tempora est repudiandae doloribus, consectetur labore
+            accusamus beatae sed.
+          </FooterSection>
+          <FooterSection title="Quick Links">
+            <ul>
+              <li>Home</li>
+              <li>Track Promises</li>
+            </ul>
+          </FooterSection>
+          <FooterSection title="Newsletter">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea facilis
+            repellendus tempora est repudiandae doloribus, consectetur labore
+            accusamus beatae sed.
+          </FooterSection>
+        </Box>
+
+        <Box className="footer-copyright">
+          Copyright@{new Date().getFullYear()}. All Rights Reserved by copyright
+        </Box>
+      </div>
     </CenteredContainer>
   );
 };
