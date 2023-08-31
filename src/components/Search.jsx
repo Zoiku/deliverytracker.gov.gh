@@ -17,20 +17,6 @@ const Search = ({ skeleton, main, placeholder }) => {
     <>
       {skeleton && (
         <>
-          <Modal
-            open={openModal}
-            onClose={toggleOpenModal(false)}
-            slideDirection="down"
-            customStyle={{ paddingTop: "25px" }}
-            element={
-              <CenteredContainer>
-                <Stack>
-                  <Search main placeholder="Search" />
-                </Stack>
-              </CenteredContainer>
-            }
-          />
-
           <Stack
             onClick={toggleOpenModal(true)}
             component="div"
@@ -47,6 +33,20 @@ const Search = ({ skeleton, main, placeholder }) => {
               <small>Search website</small>
             </Stack>
           </Stack>
+
+          <Modal
+            open={openModal}
+            onClose={toggleOpenModal(false)}
+            slideDirection="down"
+            customStyle={{ paddingTop: "25px" }}
+            element={
+              <CenteredContainer>
+                <Stack>
+                  <Search main placeholder="Search" />
+                </Stack>
+              </CenteredContainer>
+            }
+          />
         </>
       )}
 

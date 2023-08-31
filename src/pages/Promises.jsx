@@ -22,7 +22,7 @@ export const COLORS = {
 const PromiseItem = ({ title, status, overview, id }) => {
   const navigate = useNavigate();
   return (
-    <Stack spacing={2} className="promise-item-container">
+    <Stack spacing={2} className="promise-item">
       <Stack direction="row" alignItems="center" spacing={2}>
         <Avatar
           sx={{ width: 70, height: 70 }}
@@ -61,8 +61,8 @@ const Promises = () => {
     setSortMenuAnchorEl(null);
   };
   const sortMenuOptions = [
-    { key: "relevance", value: "Relevance" },
-    { key: "deadline", value: "Deadline" },
+    { key: "updatedOn", value: "Most Recent" },
+    { key: "dealine", value: "Promise Deadline" },
   ];
 
   const [filterMenuAnchorEl, setFilterMenuAnchorEl] = useState(null);
@@ -146,12 +146,12 @@ const Promises = () => {
               </div>
 
               <div className="promise-quick-action">
-                <div className="promise-quick-action-label">Help:</div>
+                <div className="promise-quick-action-label">Colors:</div>
                 <div
                   onClick={handlehelpOpen}
                   className="promise-quick-action-value"
                 >
-                  <div>Colors</div>
+                  <div>Guide</div>
                   <DropDownButton fontSize="inherit" />
                 </div>
                 <Popover

@@ -7,13 +7,13 @@
 .promise-quick-action {
   color: var(--third-text-color);
   font-size: smaller;
-  font-weight: 700;
+  font-weight: 600;
   display: flex;
   gap: 5px;
 }
 
 .promise-quick-action-label {
-  opacity: 0.5;
+  color: gray;
 }
 
 .promise-quick-action-value {
@@ -21,23 +21,23 @@
   display: flex;
   gap: 2px;
   align-items: center;
+  color: var(--third-text-color);
 }
 
 .promise-quick-action-menu,
 .promise-quick-action-popover {
-  border: 2px solid #efefef;
+  border: 1px solid #d8dbe0;
 }
 
 .promise-quick-action-popover {
-  width: 300px;
+  width: 400px;
   padding: 10px;
 }
 
 .promise-items {
   display: grid !important;
-  justify-content: space-between !important;
   grid-template-columns: repeat(4, 1fr) !important;
-  gap: 50px;
+  gap: 30px;
 }
 
 .promise-item-name {
@@ -72,7 +72,7 @@
 }
 
 .promise-item-more {
-  color: #555;
+  color: gray;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -83,7 +83,12 @@
 
 @media screen and (max-width: 1024px) {
   .promises-quick-actions {
-    gap: 8px;
+    gap: 10px;
+  }
+
+  .promise-quick-action {
+    font-size: 10px;
+    font-weight: 700;
   }
 
   .promise-quick-action-popover {
