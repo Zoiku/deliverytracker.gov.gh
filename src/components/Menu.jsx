@@ -1,8 +1,9 @@
 import Menu from "@mui/material/Menu";
 import { useState } from "react";
-import { Button } from "@mui/material";
+import { MenuItem } from "@mui/material";
+import "../styles/Menu.css";
 
-const MenuComponent = ({ children, label, icon }) => {
+const MenuComponent = ({ menuItems, defaultValue }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -14,34 +15,28 @@ const MenuComponent = ({ children, label, icon }) => {
 
   return (
     <>
-      <Button
-        startIcon={icon}
-        onClick={handleClick}
-        variant="text"
-        sx={{
-          color: "#24252a",
-          fontWeight: 500,
-          textTransform: "capitalize",
-          border: "1px solid #c5c5c5",
-        }}
-      >
-        <span>{label}</span>
-      </Button>
+      <div onClick={handleClick}>{defaultValue}</div>
 
-      <Menu
-        sx={{ marginTop: 1 }}
-        disableScrollLock
-        elevation={1}
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          "aria-labelledby": "basic-button",
-        }}
-      >
-        {children}
-      </Menu>
+      {menuItems && menuItems.length > 0 && (
+        <Menu
+          sx={{ marginTop: 1 }}
+          disableScrollLock
+          elevation={0.2}
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            "aria-labelledby": "basic-button",
+          }}
+        >
+          {menuItems.map((menu, index) => (
+            <MenuItem onClick={handleClose} key={index}>
+              {menu}
+            </MenuItem>
+          ))}
+        </Menu>
+      )}
     </>
   );
 };

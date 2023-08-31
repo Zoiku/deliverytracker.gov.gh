@@ -47,11 +47,7 @@ const Promises = () => {
     <main className="promises-page">
       <CenteredContainer>
         <Box paddingBottom={10}>
-          <Stack spacing={8}>
-            <Stack>
-              
-            </Stack>
-
+          <Stack spacing={5}>
             <Stack direction="row" className="promise-items">
               {PromiseList.map((promise, index) => (
                 <PromiseItem
