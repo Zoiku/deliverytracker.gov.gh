@@ -19,7 +19,7 @@ export const COLORS = {
   6: "var(--promise-status-broken)",
 };
 
-const PromiseItem = ({ title, status, overview, id }) => {
+export const PromiseItem = ({ title, status, overview, id }) => {
   const navigate = useNavigate();
   return (
     <Stack spacing={2} className="promise-item">

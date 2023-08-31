@@ -6,7 +6,6 @@ import "yet-another-react-lightbox/plugins/captions.css";
 import Lightbox from "yet-another-react-lightbox";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
-import Share from "yet-another-react-lightbox/plugins/share";
 import Captions from "yet-another-react-lightbox/plugins/captions";
 
 const LightboxComponent = ({ gallery }) => {
@@ -20,7 +19,7 @@ const LightboxComponent = ({ gallery }) => {
       <Lightbox
         open={openGallery}
         close={toggleOpenGallery(false)}
-        plugins={[Fullscreen, Share, Thumbnails, Captions]}
+        plugins={[Fullscreen, Thumbnails, Captions]}
         captions={{
           showToggle: true,
           descriptionMaxLines: 5,

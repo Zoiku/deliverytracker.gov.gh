@@ -17,7 +17,7 @@ export const PromiseList = [
     categories: [2, 1, 5],
   },
   {
-    title: "Fix all roads in my constituency",
+    title: "Fix all roads in the constituency",
     overview:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor rem quos ratione laboriosam voluptas praesentium magnam animi molestias error, et totam, nihil voluptatum repellat suscipit id impedit minima laborum Repellendus",
     deadline: new Date(),
@@ -32,7 +32,7 @@ export const PromiseList = [
     categories: [1, 5],
   },
   {
-    title: "Reduce levels of employment to 0",
+    title: "Reduce levels of employment to 0%",
     overview:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor rem quos ratione laboriosam voluptas praesentium magnam animi molestias error, et totam, nihil voluptatum repellat suscipit id impedit minima laborum Repellendus",
     deadline: new Date(),

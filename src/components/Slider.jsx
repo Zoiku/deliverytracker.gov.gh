@@ -1,59 +1,24 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  EffectCreative,
-  Autoplay,
-  Navigation,
-  EffectFade,
-} from "swiper/modules";
-import "swiper/css/navigation";
+import { Pagination } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/effect-creative";
-import "swiper/css/effect-fade";
+import "swiper/css/pagination";
 import "../styles/Slider.css";
 
-const Slider = ({ srcs, overlay, promises, children }) => {
+const Slider = ({ slides, spaceBetween = 1, slidesPerView = 1 }) => {
   return (
-    <>
-      {overlay && (
-        <Swiper
-          effect="creative"
-          loop={true}
-          modules={[Autoplay, EffectCreative]}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          speed={5000}
-          creativeEffect={{
-            prev: {
-              shadow: true,
-              translate: [0, 0, -400],
-            },
-            next: {
-              translate: ["100%", 0, 0],
-            },
-          }}
-        >
-          {srcs.map((src, index) => (
-            <SwiperSlide key={index}>
-              <img src={src} alt="" />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      )}
-
-      {promises && (
-        <Swiper
-          effect="fade"
-          navigation={true}
-          modules={[Navigation, EffectFade]}
-          spaceBetween={1}
-          slidesPerView={1}
-        >
-          {children}
-        </Swiper>
-      )}
-    </>
+    <Swiper
+      pagination={{
+        clickable: true,
+      }}
+      modules={[Pagination]}
+      spaceBetween={spaceBetween}
+      slidesPerView={slidesPerView}
+    >
+      {slides &&
+        slides.map((slide, index) => (
+          <SwiperSlide key={index}>{slide}</SwiperSlide>
+        ))}
+    </Swiper>
   );
 };
 

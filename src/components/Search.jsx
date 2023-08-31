@@ -1,6 +1,6 @@
 import "../styles/Search.css";
 import { useState } from "react";
-import { Collapse, IconButton, InputBase, Stack } from "@mui/material";
+import { Collapse, InputBase, Stack } from "@mui/material";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import Modal from "./Modal";
 import Slide from "@mui/material/Slide";
@@ -58,9 +58,7 @@ const Search = ({ skeleton, main, placeholder }) => {
             alignItems="center"
             className="main-search-box"
           >
-            <IconButton>
               <SearchRoundedIcon sx={{ color: "var(--primary-theme)" }} />
-            </IconButton>
             <InputBase
               autoFocus
               type="text"
@@ -76,9 +74,7 @@ const Search = ({ skeleton, main, placeholder }) => {
               mountOnEnter
               unmountOnExit
             >
-              <IconButton>
                 <CloseRoundedIcon />
-              </IconButton>
             </Slide>
           </Stack>
 
