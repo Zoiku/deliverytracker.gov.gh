@@ -1,0 +1,27 @@
+.echarts-container {
+  height: inherit;
+  width: inherit;
+}
+
+.echarts {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.echarts-desktop {
+  display: block;
+}
+
+.echarts-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1150px) {
+  .echarts-desktop {
+    display: none;
+  }
+
+  .echarts-mobile {
+    display: block;
+  }
+}

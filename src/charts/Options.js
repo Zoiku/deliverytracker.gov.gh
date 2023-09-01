@@ -1,62 +1,87 @@
-import * as echarts from "echarts";
-import mapJson from '../assets/map/Ghana.json';
-import { generateGeoSeries } from "../functions";
-echarts.registerMap("Ghana", mapJson);
+const name = "Promises Summary";
 
 const data = [
-    { value: 60, name: 'Agriculture' },
-    { value: 40, name: 'Infrastructure' },
-    { value: 70, name: 'Roads' },
-    { value: 50, name: 'Sanitation' },
+    { value: 10, name: 'Unstarted', itemStyle: { color: "rgba(170, 170, 170, 0.6)" } },
+    { value: 1, name: 'Progress', itemStyle: { color: "rgba(67, 135, 116, 0.6)" } },
+    { value: 1, name: 'Stalled', itemStyle: { color: "rgba(183, 171, 43, 0.6)" } },
+    { value: 1, name: 'Delivered', itemStyle: { color: "rgba(36, 178, 0, 0.6)" } },
+    { value: 1, name: 'Compromised', itemStyle: { color: "rgba(255, 81, 1, 0.6)" } },
+    { value: 1, name: 'Broken', itemStyle: { color: "rgba(246, 25, 0, 0.6)" } }
 ]
 
-const pie = {
+const pieDesktop = {
+    tooltip: {
+        trigger: 'item',
+    },
     legend: {
-        top: 'bottom'
+        top: 0,
+        left: 'center',
     },
     series: [
         {
+            name: name,
             type: 'pie',
-            radius: [50, 250],
-            center: ['50%', '50%'],
-            roseType: 'area',
+            radius: ['85%', '30%'],
+            avoidLabelOverlap: false,
+            startAngle: 180,
             itemStyle: {
-                borderRadius: 10
+                borderRadius: 20,
+                borderColor: '#fff',
+                borderWidth: 2
             },
-            data: [
-                { value: 60, name: 'Agriculture' },
-                { value: 40, name: 'Infrastructure' },
-                { value: 70, name: 'Roads' },
-                { value: 50, name: 'Sanitation' },
-                { value: 90, name: 'Education' },
-                { value: 40, name: 'Religion' },
-            ]
+            label: {
+                show: false,
+                position: 'center'
+            },
+            emphasis: {
+                label: {
+                    show: true,
+                    fontSize: 25,
+                    fontWeight: 'bold'
+                }
+            },
+            labelLine: {
+                show: false
+            },
+            data: data
         }
     ]
-}
+};
 
-const map = {
-    geo: {
-        map: 'Ghana',
-        roam: false,
-        itemStyle: {
-            areaColor: '#e7e8ea'
-        }
+const pieMobile = {
+    tooltip: {
+        trigger: 'item',
     },
     legend: {
-        top: 'top'
+        top: 0,
+        left: 'center',
     },
     series: [
-        generateGeoSeries(data, [-1, 9.240471], 30),
-        generateGeoSeries(data, [-0.9, 10.8], 10),
-        generateGeoSeries(data, [-2.2, 10.4], 15),
-        generateGeoSeries(data, [-1.5, 7.9], 15),
-        generateGeoSeries(data, [-1.5, 6.8], 25),
-        generateGeoSeries(data, [-2.4, 5.7], 15),
-        generateGeoSeries(data, [-1.1, 5.5], 10),
-        generateGeoSeries(data, [-0.1, 5.7], 10),
-        generateGeoSeries(data, [-0.4, 6.3], 15),
+        {
+            name: name,
+            type: 'pie',
+            radius: ['100%', '50%'],
+            avoidLabelOverlap: false,
+            itemStyle: {
+                borderRadius: 20,
+                borderColor: '#fff',
+                borderWidth: 2,
+            },
+            label: {
+                show: false,
+            },
+            emphasis: {
+                label: {
+                    show: false,
+                }
+            },
+            labelLine: {
+                show: false
+            },
+            data: data
+        }
     ]
-}
+};
 
-export { pie, map };
+
+export { pieMobile, pieDesktop };

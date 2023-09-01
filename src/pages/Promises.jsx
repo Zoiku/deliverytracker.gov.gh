@@ -103,8 +103,18 @@ const Promises = () => {
                   anchorEl={filterMenuAnchorEl}
                   onClose={handleFilterMenuClose}
                 >
-                  <Stack spacing={2} className="promise-quick-action-popover">
-                    <Tip message="Under construction" />
+                  <Stack className="promise-quick-action-popover">
+                    <div className="promise-quick-action-popover-title">
+                      <div className="promise-quick-action-popover-title-text">
+                        Select from filters
+                      </div>
+                    </div>
+                    <Stack
+                      spacing={2}
+                      className="promise-quick-action-popover-body"
+                    >
+                      <Tip message="Under construction" />
+                    </Stack>
                   </Stack>
                 </Popover>
               </div>
@@ -160,7 +170,17 @@ const Promises = () => {
                   onClose={handlehelpClose}
                 >
                   <Box className="promise-quick-action-popover">
-                    <Tip message="Under construction" />
+                    <Stack className="promise-quick-action-popover">
+                      <div className="promise-quick-action-popover-title">
+                        <div className="promise-quick-action-popover-title-text">
+                          Promise status by Colors
+                        </div>
+                      </div>
+                      <Stack
+                        spacing={2}
+                        className="promise-quick-action-popover-body"
+                      ></Stack>
+                    </Stack>
                   </Box>
                 </Popover>
               </div>

@@ -30,8 +30,21 @@
 }
 
 .promise-quick-action-popover {
-  width: 400px;
+  width: 300px;
+  font-size: small;
+}
+
+.promise-quick-action-popover-title,
+.promise-quick-action-popover-body {
   padding: 10px;
+}
+
+.promise-quick-action-popover-title {
+  border-bottom: 1px solid #d8dbe0;
+}
+
+.promise-quick-action-popover-title-text {
+  font-weight: 600;
 }
 
 .promise-items {

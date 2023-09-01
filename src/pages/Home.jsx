@@ -8,6 +8,7 @@ import { STATUS } from "../lists/Filters";
 import Slider from "../components/Slider";
 import { PromiseList } from "../lists/Promises";
 import { useNavigate } from "react-router-dom";
+import Chart from "../charts/Chart";
 
 const HomeSection = ({ title, children }) => (
   <CenteredContainer>
@@ -20,7 +21,6 @@ const HomeSection = ({ title, children }) => (
 
 const KeyPromise = ({ id, title, status, quote }) => {
   const navigate = useNavigate();
-
   return (
     <div className="key-promise">
       <div
@@ -59,16 +59,46 @@ const Home = () => {
   return (
     <main className="home-page">
       <Stack paddingBottom={10} spacing={10}>
+        <CenteredContainer>
+          <Stack spacing={1} className="home-page-introduction">
+            <div className="home-page-introduction-title">
+              <div className="home-page-introduction-title-text">
+                Promise Tracker
+              </div>
+            </div>
+            <div className="home-introduction-body">
+              <div className="home-introduction-body-inner">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+                beatae deserunt, aut doloremque unde, quibusdam porro quidem
+                optio aperiam ullam, ipsam necessitatibus sapiente nemo commodi
+                ad quia animi recusandae nulla tempore blanditiis repellendus?
+                Dolorum ipsum veritatis? Nihil eius cumque veniam eos a
+                accusamus molestiae nemo praesentium natus veritatis consectetur
+                libero. Aliquam molestias facilis eaque consectetur. Quo sed
+                suscipit a ratione eum.
+              </div>
+            </div>
+          </Stack>
+        </CenteredContainer>
+
+        <HomeSection title="Promises Summary">
+          <div className="promise-summary-chart-container">
+            <Chart />
+          </div>
+        </HomeSection>
+
         <HomeSection title="Key Promises">
           <Slider
-            slides={PromiseList.map((promise) => (
-              <KeyPromise
-                id={promise.id}
-                status={promise.status}
-                quote={promise.overview}
-                title={promise.title}
-              />
-            ))}
+            slides={PromiseList.sort((a, b) => b.relevance - a.relevance)
+              .slice(0, 5)
+              .map((promise) => (
+                <KeyPromise
+                  id={promise.id}
+                  status={promise.status}
+                  quote={promise.overview}
+                  title={promise.title}
+                />
+              ))}
           />
         </HomeSection>
 
@@ -77,15 +107,17 @@ const Home = () => {
             <Slider
               slidesPerView={4}
               spaceBetween={20}
-              slides={PromiseList.map((promise, index) => (
-                <PromiseItem
-                  id={promise.id}
-                  overview={promise.overview}
-                  status={promise.status}
-                  title={promise.title}
-                  key={index}
-                />
-              ))}
+              slides={PromiseList.sort((a, b) => b.updatedOn - a.updatedOn)
+                .slice(0, 5)
+                .map((promise, index) => (
+                  <PromiseItem
+                    id={promise.id}
+                    overview={promise.overview}
+                    status={promise.status}
+                    title={promise.title}
+                    key={index}
+                  />
+                ))}
             />
           </div>
           <div className="mobile-slider">

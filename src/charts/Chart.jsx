@@ -1,8 +1,14 @@
 import Chart from "echarts-for-react";
-import { pie as option } from "./Options";
+import { pieDesktop, pieMobile } from "./Options";
+import "../styles/Chart.css";
 
 const ChartComponent = () => {
-  return <Chart style={{ height: "inherit", width: "100%" }} option={option} />;
+  return (
+    <div className="echarts-container">
+      <Chart className="echarts echarts-desktop" option={pieDesktop} />
+      <Chart className="echarts echarts-mobile" option={pieMobile} />
+    </div>
+  );
 };
 
 export default ChartComponent;
