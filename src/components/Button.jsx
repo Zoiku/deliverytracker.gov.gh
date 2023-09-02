@@ -16,16 +16,13 @@ const fontFamily = [
 
 const ButtonComponent = (props) => {
   const Button = styled(LoadingButton)({
-    color: "gray",
     textTransform: "capitalize",
-    borderColor: "gray",
+    fontSize: "small",
     fontFamily: [...fontFamily].join(","),
-    "&:hover": {
-      borderColor: "gray",
-    },
+    "&:hover": {},
   });
 
-  return <Button {...props} />;
+  return <Button disableElevation {...props} />;
 };
 
 export default ButtonComponent;

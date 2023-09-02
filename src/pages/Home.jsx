@@ -102,7 +102,7 @@ const Home = () => {
           />
         </HomeSection>
 
-        <HomeSection title="Recent Promises">
+        <HomeSection title="Recently Updated">
           <div className="web-slider">
             <Slider
               slidesPerView={4}

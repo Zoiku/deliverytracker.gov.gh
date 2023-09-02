@@ -1,22 +1,46 @@
-.bm-morph-shape {
-  fill: rgba(51, 51, 51, 0.41);
-  background: rgba(51, 51, 51, 0.41);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10.2px);
-  -webkit-backdrop-filter: blur(10.2px);
+.bm-menu {
+  background: #fff;
+}
+
+.hamburger-container {
+  height: 100vh;
   width: 100%;
+  position: relative;
+  overflow: clip;
+}
+
+.hamburger-nav {
+  height: 60px;
+  align-items: center;
+  display: flex;
 }
 
 .hamburger-content {
-  height: 100%;
-  width: 100%;
-  padding: 10px;
+  margin-top: 30px;
 }
 
-.hamburger-menu-nav {
-  height: 100px;
-  width: 100% !important;
-  border: 2px solid red;
-  font-size: x-large;
-  color: #fff;
+.hamburger-item {
+  color: rgba(128, 128, 128, 0.5);
+  display: flex;
+  align-items: center;
+  font-size: large;
+  font-weight: 700;
+}
+
+.hamburger-item-text {
+  font-size: 50px;
+}
+
+.hamburger-item:active {
+  color: var(--primary-theme);
+}
+
+.hamburger-shade {
+  position: absolute;
+  bottom: -70px;
+  left: -10px;
+  font-weight: 800;
+  font-size: 120px;
+  color: rgba(168, 168, 168, 0.2);
+  color: #e7effd;
 }

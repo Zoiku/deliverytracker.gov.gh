@@ -32,7 +32,7 @@
 }
 
 .promise-quick-action-popover {
-  width: 350px;
+  width: 700px;
 }
 
 .promise-quick-action-popover-body {
@@ -43,7 +43,8 @@
   margin: 4px auto auto auto !important;
   border: 1px solid var(--bg-gray) !important;
   font-weight: 500;
-  color: gray !important;
+  color: rgb(90, 90, 90) !important;
+  border-radius: 4px !important;
 }
 
 .promise-quick-filter-item:not(:last-child) {

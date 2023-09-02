@@ -15,7 +15,7 @@ export const styles = {
     right: 14,
   },
   bmCross: {
-    background: "#fff",
+    background: "#000",
   },
   bmMenuWrap: {
     position: "fixed",

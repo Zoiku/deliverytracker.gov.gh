@@ -2,7 +2,6 @@ import "../styles/Nav.css";
 import { Stack } from "@mui/material";
 import { NavLink, useNavigate } from "react-router-dom";
 import { NavLinksList } from "../lists/Nav";
-import Search from "./Search";
 import Hamburger from "./Hamburger";
 import CenteredContainer from "./CenteredContainer";
 import { useEffect, useState } from "react";
@@ -51,8 +50,7 @@ const Nav = () => {
                 className="nav-web-logo-container"
               >
                 <div className="nav-web-logo-text">
-                  <span className="nav-web-logo-text-key">Promise</span>{" "}
-                  Tracker
+                  <span className="nav-web-logo-text-key">Promise</span> Tracker
                 </div>
               </Stack>
 
@@ -62,7 +60,11 @@ const Nav = () => {
             </Stack>
 
             <Stack component="div">
-              <Search skeleton />
+              <small
+                style={{ fontWeight: 700, color: "var(--third-text-color)" }}
+              >
+                Tracking Hon. Frank Annoh-Dompreh
+              </small>
             </Stack>
           </Stack>
         </CenteredContainer>

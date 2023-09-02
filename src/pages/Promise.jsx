@@ -6,7 +6,6 @@ import quoteIcon from "../assets/icons/icons8-quote-100.png";
 import { COLORS } from "./Promises";
 import { CATEGORY, STATUS } from "../lists/Filters";
 import Timeline from "../components/Timeline";
-import { EventList } from "../lists/Events";
 
 const PromiseStack = ({ title, titleHelper, children, className }) => (
   <Stack className={`promise-body ${className}`} spacing={3}>
@@ -114,7 +113,10 @@ const PromiseComponent = () => {
               title="Timeline"
               titleHelper="Event updates on the Promise"
             >
-              <Timeline theme={COLORS[promise.status]} events={EventList} />
+              <Timeline
+                theme={COLORS[promise.status]}
+                events={promise.events}
+              />
             </PromiseStack>
           </div>
         </Stack>

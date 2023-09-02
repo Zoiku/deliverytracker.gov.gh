@@ -27,7 +27,7 @@
 }
 
 .nav-web-link {
-  color: var(--third-text-color);
+  color: gray;
   text-decoration: none;
   font-size: small;
   padding: 6px 8px;

@@ -1,7 +1,7 @@
 import "../styles/Promises.css";
 import client from "../assets/mp/image.jpg";
 import CenteredContainer from "../components/CenteredContainer";
-import { Avatar, Box, Chip, Stack } from "@mui/material";
+import { Avatar, Box, Chip, Collapse, Stack } from "@mui/material";
 import { PromiseList } from "../lists/Promises";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -17,6 +17,7 @@ import {
 } from "../functions";
 import bgNoResults from "../assets/bgs/404.svg";
 import TreeView from "../components/TreeView";
+import Button from "../components/Button";
 
 export const COLORS = {
   1: "var(--promise-status-unstarted)",
@@ -127,6 +128,24 @@ const Promises = () => {
     }
   };
 
+  const handleResetFilterItems = (filterType) => () => {
+    if (filterType === "category") {
+      setSelectedFilterGroupsIndex((selectedFilters) => {
+        return {
+          ...selectedFilters,
+          category: [],
+        };
+      });
+    } else {
+      setSelectedFilterGroupsIndex((selectedFilters) => {
+        return {
+          ...selectedFilters,
+          status: null,
+        };
+      });
+    }
+  };
+
   useEffect(() => {
     const filteredPromises = filteringPromises(
       PromiseList,
@@ -142,7 +161,9 @@ const Promises = () => {
           <Stack spacing={5}>
             <div className="promises-quick-actions">
               <div className="promise-quick-action">
-                <div className="promise-quick-action-label">Manage Promises:</div>
+                <div className="promise-quick-action-label">
+                  Manage Promises:
+                </div>
                 <div
                   onClick={handleFilterMenuOpen}
                   className="promise-quick-action-value"
@@ -195,6 +216,20 @@ const Promises = () => {
                             />
                           )
                         )}
+                        <Collapse
+                          in={selectedFilterGroupsIndex.category.length > 0}
+                        >
+                          <Box marginTop={1}>
+                            <Button
+                              size="small"
+                              variant="outlined"
+                              color="error"
+                              onClick={handleResetFilterItems("category")}
+                            >
+                              Reset
+                            </Button>
+                          </Box>
+                        </Collapse>
                       </PromiseQuickFilterGroup>
                       <PromiseQuickFilterGroup label="Filter Promises by Status">
                         {filterGroupsOptions["status"].map((status, index) => (

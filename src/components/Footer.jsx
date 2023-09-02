@@ -14,6 +14,9 @@ const FooterSection = ({ title, children }) => {
 
 const Footer = () => {
   const navigate = useNavigate();
+  const openMail = () => {
+    window.open(`mailto://`);
+  };
 
   return (
     <CenteredContainer backgroundColor="var(--third-text-color)">
@@ -27,9 +30,9 @@ const Footer = () => {
               </div>
             }
           >
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea facilis
-            repellendus tempora est repudiandae doloribus, consectetur labore
-            accusamus beatae sed.
+            A custom application to track project delivery and implementation,
+            showcase the MP's special initiatives, intervention, and
+            achievements
           </FooterSection>
           <FooterSection title="Quick Links">
             <ul>
@@ -37,16 +40,18 @@ const Footer = () => {
               <li onClick={() => navigate("/promises")}>Track Promises</li>
             </ul>
           </FooterSection>
-          <FooterSection title="Newsletter">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea facilis
-            repellendus tempora est repudiandae doloribus, consectetur labore
-            accusamus beatae sed.
+          <FooterSection title="Fact Check">
+            Is there a promise you’d like to see tracked or fact-checked? Send
+            an email to{" "}
+            <span onClick={openMail} className="footer-important-link">
+              email@email.com
+            </span>
           </FooterSection>
         </Box>
 
         <Box className="footer-copyright">
-          Copyright@{new Date().getFullYear()}. All rights reserved by copyright
-          | Developed by Mark Zoiku
+          Copyright@{new Date().getFullYear()}. All rights reserved | Developed
+          by Mark Zoiku
         </Box>
       </div>
     </CenteredContainer>

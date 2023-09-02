@@ -18,15 +18,15 @@
 .tree-view-item-inner-inner {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 }
 
 .tree-view-items {
-  padding-left: 30px;
+  padding-left: 25px;
 }
 
 .tree-view-label {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .tree-view-button-icon {
