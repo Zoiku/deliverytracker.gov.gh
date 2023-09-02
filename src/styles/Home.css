@@ -1,12 +1,15 @@
 .home-page-introduction {
   margin-top: 30px;
   text-align: center;
-  color: var(--third-text-color);
 }
 
 .home-page-introduction-title-text {
-  font-size: 80px;
   font-weight: 800;
+  font-size: clamp(32px, 8vw, 120px) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(90deg, #787878 0, #2270fd 100%);
 }
 
 .home-introduction-body {
@@ -127,11 +130,6 @@
 }
 
 @media screen and (max-width: 1150px) {
-  .home-page-introduction-title-text {
-    font-size: xx-large;
-    color: var(--third-text-color);
-  }
-
   .home-introduction-body {
     font-size: 12px;
   }
