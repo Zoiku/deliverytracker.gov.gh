@@ -217,7 +217,7 @@ const Promises = () => {
                           )
                         )}
                         <Collapse
-                          in={selectedFilterGroupsIndex.category.length > 0}
+                          in={selectedFilterGroupsIndex.category.length > 1}
                         >
                           <Box marginTop={1}>
                             <Button
