@@ -58,7 +58,7 @@ const KeyPromise = ({ id, title, status, quote }) => {
 const Home = () => {
   return (
     <main className="home-page">
-      <Stack paddingBottom={10} spacing={10}>
+      <Stack className="home-page-sections" paddingBottom={10} spacing={10}>
         <CenteredContainer>
           <Stack spacing={1} className="home-page-introduction">
             <div className="home-page-introduction-title">

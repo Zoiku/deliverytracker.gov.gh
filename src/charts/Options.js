@@ -91,7 +91,8 @@ const pieMobile = {
       label: {
         show: true,
         position: "inside",
-        formatter: "{b}: {c} ({d}%)",
+        formatter: "{b}: {c}",
+        fontWeight: 800
       },
       labelLine: {
         show: false,

@@ -1,5 +1,4 @@
 .home-page-introduction {
-  margin-top: 30px;
   text-align: center;
 }
 
@@ -9,7 +8,7 @@
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent;
-  background: linear-gradient(90deg, #787878 0, #2270fd 100%);
+  background: linear-gradient(50deg, #2270fd 0, #000 100%);
 }
 
 .home-introduction-body {
@@ -22,6 +21,7 @@
   width: 85%;
   font-size: larger;
   color: gray;
+  font-weight: 500;
 }
 
 .promise-summary-chart-container {
@@ -130,8 +130,8 @@
 }
 
 @media screen and (max-width: 1150px) {
-  .home-introduction-body {
-    font-size: 12px;
+  .home-page-sections > div {
+    margin: 30px 0 !important;
   }
 
   .home-introduction-body-inner {
