@@ -56,6 +56,11 @@ const KeyPromise = ({ id, title, status, quote }) => {
 };
 
 const Home = () => {
+  const navigate = useNavigate();
+  const navigateTo = (path) => () => {
+    navigate(path, { replace: true });
+  };
+
   return (
     <main className="home-page">
       <Stack className="home-page-sections" paddingBottom={10} spacing={10}>
@@ -76,6 +81,12 @@ const Home = () => {
                 accusamus molestiae nemo praesentium natus veritatis consectetur
                 libero. Aliquam molestias facilis eaque consectetur. Quo sed
                 suscipit a ratione eum.
+                <div
+                  onClick={navigateTo("/promises")}
+                  className="home-introduction-body-inner-view-promises"
+                >
+                  View All Promises
+                </div>
               </div>
             </div>
           </Stack>

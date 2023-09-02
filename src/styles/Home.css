@@ -20,6 +20,14 @@
   font-size: 18px;
 }
 
+.home-introduction-body-inner-view-promises {
+  color: var(--primary-theme);
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 17px;
+  cursor: pointer;
+}
+
 .promise-summary-chart-container {
   height: 700px;
   width: 100%;
