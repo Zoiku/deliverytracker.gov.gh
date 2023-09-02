@@ -1,14 +1,11 @@
 .home-page-introduction {
   text-align: center;
+  margin-top: 50px;
 }
 
 .home-page-introduction-title-text {
-  font-weight: 800;
-  font-size: clamp(32px, 8vw, 120px) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-  background: linear-gradient(90deg, #2270fd, #062f7a 100%);
+  font-weight: 700;
+  font-size: xxx-large;
 }
 
 .home-introduction-body {
@@ -18,10 +15,9 @@
 }
 
 .home-introduction-body-inner {
-  width: 85%;
-  font-size: larger;
-  color: gray;
-  font-weight: 500;
+  width: 80%;
+  color: #9ea0a3;
+  font-size: 18px;
 }
 
 .promise-summary-chart-container {
@@ -130,16 +126,12 @@
 }
 
 @media screen and (max-width: 1150px) {
+  .home-page-introduction {
+    margin-top: 10px;
+  }
+
   .home-page-introduction-title-text {
-    font-size: clamp(40px, 8vw, 120px) !important;
-  }
-
-  .home-page-sections > div:nth-child(2) {
-    margin-bottom: 0 !important;
-  }
-
-  .home-page-sections > div:not(:nth-child(2)) {
-    margin: 30px 0 !important;
+    font-size: xx-large;
   }
 
   .home-introduction-body-inner {
