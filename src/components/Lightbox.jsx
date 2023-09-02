@@ -8,10 +8,24 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Captions from "yet-another-react-lightbox/plugins/captions";
 
-const LightboxComponent = ({ gallery }) => {
+const LightboxComponent = ({ theme, gallery }) => {
+  const [isHovered, setIsHovered] = useState(false);
   const [openGallery, setOpenGallery] = useState(false);
   const toggleOpenGallery = (open) => () => {
     setOpenGallery(open);
+  };
+  const onHoverStyle = isHovered
+    ? {
+        color: theme,
+      }
+    : {};
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
   };
 
   return gallery ? (
@@ -32,7 +46,13 @@ const LightboxComponent = ({ gallery }) => {
           };
         })}
       />
-      <div className="lightbox-view-text" onClick={toggleOpenGallery(true)}>
+      <div
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className="lightbox-view-text"
+        onClick={toggleOpenGallery(true)}
+        style={onHoverStyle}
+      >
         View Gallery
       </div>
     </div>

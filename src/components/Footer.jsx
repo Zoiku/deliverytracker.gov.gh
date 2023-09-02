@@ -1,6 +1,7 @@
 import "../styles/Footer.css";
 import CenteredContainer from "../components/CenteredContainer";
 import { Box, Stack } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const FooterSection = ({ title, children }) => {
   return (
@@ -12,6 +13,8 @@ const FooterSection = ({ title, children }) => {
 };
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <CenteredContainer backgroundColor="var(--third-text-color)">
       <div className="footer-component">
@@ -19,9 +22,7 @@ const Footer = () => {
           <FooterSection
             title={
               <div>
-                <span style={{ color: "var(--primary-theme-light)" }}>
-                  Promise
-                </span>{" "}
+                <span style={{ color: "var(--primary-theme)" }}>Promise</span>{" "}
                 Tracker
               </div>
             }
@@ -32,8 +33,8 @@ const Footer = () => {
           </FooterSection>
           <FooterSection title="Quick Links">
             <ul>
-              <li>Home</li>
-              <li>Track Promises</li>
+              <li onClick={() => navigate("/")}>Home</li>
+              <li onClick={() => navigate("/promises")}>Track Promises</li>
             </ul>
           </FooterSection>
           <FooterSection title="Newsletter">
@@ -44,7 +45,8 @@ const Footer = () => {
         </Box>
 
         <Box className="footer-copyright">
-          Copyright@{new Date().getFullYear()}. All Rights Reserved by copyright
+          Copyright@{new Date().getFullYear()}. All rights reserved by copyright
+          | Developed by Mark Zoiku
         </Box>
       </div>
     </CenteredContainer>

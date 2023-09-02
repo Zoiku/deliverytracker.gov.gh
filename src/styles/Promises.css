@@ -6,10 +6,10 @@
 
 .promise-quick-action {
   color: var(--third-text-color);
-  font-size: smaller;
-  font-weight: 600;
+  font-size: small;
   display: flex;
   gap: 5px;
+  font-weight: 600;
 }
 
 .promise-quick-action-label {
@@ -22,35 +22,47 @@
   gap: 2px;
   align-items: center;
   color: var(--third-text-color);
-}
-
-.promise-quick-action-menu,
-.promise-quick-action-popover {
-  border: 1px solid #d8dbe0;
+  font-weight: 600;
 }
 
 .promise-quick-action-popover {
-  width: 300px;
+  border: 2px solid var(--bg-gray);
+  border-radius: 5px;
   font-size: small;
 }
 
-.promise-quick-action-popover-title,
+.promise-quick-action-popover {
+  width: 350px;
+}
+
 .promise-quick-action-popover-body {
   padding: 10px;
 }
 
-.promise-quick-action-popover-title {
-  border-bottom: 1px solid #d8dbe0;
+.promise-quick-filter-item {
+  margin: 4px auto auto auto !important;
+  border: 1px solid var(--bg-gray) !important;
+  font-weight: 500;
+  color: gray !important;
 }
 
-.promise-quick-action-popover-title-text {
-  font-weight: 600;
+.promise-quick-filter-item:not(:last-child) {
+  margin-right: 4px !important;
+}
+
+.promise-quick-filter-item-selected {
+  color: var(--primary-theme) !important;
+  background: #e7effd !important;
+}
+
+.promise-items-container {
+  min-height: calc(100vh - 100px);
 }
 
 .promise-items {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr) !important;
-  gap: 40px;
+  gap: 20px;
 }
 
 .promise-item-name {
@@ -94,13 +106,26 @@
   white-space: normal;
 }
 
+.promise-items-container-no-results {
+  display: grid;
+  justify-content: center;
+}
+
+.promise-items-container-no-results-image {
+  height: calc(100vh - 300px);
+}
+
+.promise-items-container-no-results-image img {
+  height: 100%;
+  width: 100%;
+}
+
 @media screen and (max-width: 1024px) {
   .promises-quick-actions {
     gap: 10px;
   }
 
   .promise-quick-action {
-    font-size: 10px;
     font-weight: 700;
   }
 
@@ -110,5 +135,13 @@
 
   .promise-items {
     grid-template-columns: repeat(1, 1fr) !important;
+  }
+
+  .promise-items-container {
+    min-height: auto;
+  }
+
+  .promise-items-container-no-results-image {
+    height: 100%;
   }
 }

@@ -1,14 +1,22 @@
 import "../styles/Promises.css";
 import client from "../assets/mp/image.jpg";
 import CenteredContainer from "../components/CenteredContainer";
-import { Avatar, Box, MenuItem, Stack } from "@mui/material";
+import { Avatar, Box, Chip, Stack } from "@mui/material";
 import { PromiseList } from "../lists/Promises";
 import { useNavigate } from "react-router-dom";
-import Menu from "../components/Menu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DropDownButton from "@mui/icons-material/KeyboardArrowDownRounded";
 import Popover from "../components/Popover";
-import Tip from "../components/Tip";
+import { CATEGORY, STATUS } from "../lists/Filters";
+import {
+  filteringPromises,
+  sortHighPriority,
+  sortMostRecent,
+  sortOldest,
+  sortPromisedDeadline,
+} from "../functions";
+import bgNoResults from "../assets/bgs/404.svg";
+import TreeView from "../components/TreeView";
 
 export const COLORS = {
   1: "var(--promise-status-unstarted)",
@@ -46,25 +54,24 @@ export const PromiseItem = ({ title, status, overview, id }) => {
   );
 };
 
-const Promises = () => {
-  const [selectedSortMenuIndex, setSelectedSortMenuIndex] = useState(0);
-  const [sortMenuAnchorEl, setSortMenuAnchorEl] = useState(null);
-  const openSortMenu = Boolean(sortMenuAnchorEl);
-  const handleSortMenuOpen = (event) => {
-    setSortMenuAnchorEl(event.currentTarget);
-  };
-  const handleSortMenuClose = () => {
-    setSortMenuAnchorEl(null);
-  };
-  const handleSortMenuItemClick = (_, index) => {
-    setSelectedSortMenuIndex(index);
-    setSortMenuAnchorEl(null);
-  };
-  const sortMenuOptions = [
-    { key: "updatedOn", value: "Most Recent" },
-    { key: "dealine", value: "Promise Deadline" },
-  ];
+const PromiseQuickFilterGroup = ({ label, children, index }) => (
+  <div className="promise-quick-filter-group">
+    <TreeView label={label}>{children}</TreeView>
+  </div>
+);
 
+const Promises = () => {
+  const [promises, setPromises] = useState(PromiseList);
+  const sortMenuOptions = [
+    { value: "Most Recent", action: sortMostRecent },
+    { value: "Oldest", action: sortOldest },
+    { value: "Priority", action: sortHighPriority },
+    { value: "Promise Deadline", action: sortPromisedDeadline },
+  ];
+  const [selectedSortMenuIndex, setSelectedSortMenuIndex] = useState(0);
+  const handleSelectSortMenuItemClick = (index) => () => {
+    setSelectedSortMenuIndex(index);
+  };
   const [filterMenuAnchorEl, setFilterMenuAnchorEl] = useState(null);
   const openFilterMenu = Boolean(filterMenuAnchorEl);
   const handleFilterMenuOpen = (event) => {
@@ -73,15 +80,60 @@ const Promises = () => {
   const handleFilterMenuClose = () => {
     setFilterMenuAnchorEl(null);
   };
+  const filterGroupsOptions = {
+    category: Object.values(CATEGORY),
+    status: Object.values(STATUS),
+  };
+  const [selectedFilterGroupsIndex, setSelectedFilterGroupsIndex] = useState({
+    category: [],
+    status: null,
+  });
+  const handleSelectFilterItemClick = (filterType, index) => () => {
+    if (filterType === "category") {
+      if (!selectedFilterGroupsIndex["category"].includes(index + 1)) {
+        setSelectedFilterGroupsIndex((selectedFilters) => {
+          return {
+            ...selectedFilters,
+            [filterType]: [...selectedFilters.category, index + 1],
+          };
+        });
+      }
+    } else {
+      setSelectedFilterGroupsIndex((selectedFilters) => {
+        return {
+          ...selectedFilters,
+          [filterType]: index + 1,
+        };
+      });
+    }
+  };
+  const handleRemoveFilterItem = (filterType, index) => () => {
+    if (filterType === "category") {
+      setSelectedFilterGroupsIndex((selectedFilters) => {
+        return {
+          ...selectedFilters,
+          [filterType]: [...selectedFilters.category].filter(
+            (item) => item !== index + 1
+          ),
+        };
+      });
+    } else {
+      setSelectedFilterGroupsIndex((selectedFilters) => {
+        return {
+          ...selectedFilters,
+          [filterType]: null,
+        };
+      });
+    }
+  };
 
-  const [helpAnchorEl, sethelpAnchorEl] = useState(null);
-  const openhelp = Boolean(helpAnchorEl);
-  const handlehelpOpen = (event) => {
-    sethelpAnchorEl(event.currentTarget);
-  };
-  const handlehelpClose = () => {
-    sethelpAnchorEl(null);
-  };
+  useEffect(() => {
+    const filteredPromises = filteringPromises(
+      PromiseList,
+      selectedFilterGroupsIndex
+    );
+    setPromises(filteredPromises);
+  }, [selectedFilterGroupsIndex]);
 
   return (
     <main className="promises-page">
@@ -90,12 +142,12 @@ const Promises = () => {
           <Stack spacing={5}>
             <div className="promises-quick-actions">
               <div className="promise-quick-action">
-                <div className="promise-quick-action-label">Filter by:</div>
+                <div className="promise-quick-action-label">Manage Promises:</div>
                 <div
                   onClick={handleFilterMenuOpen}
                   className="promise-quick-action-value"
                 >
-                  <div>Show Filters</div>
+                  <div>Show All Options</div>
                   <DropDownButton fontSize="inherit" />
                 </div>
                 <Popover
@@ -104,100 +156,132 @@ const Promises = () => {
                   onClose={handleFilterMenuClose}
                 >
                   <Stack className="promise-quick-action-popover">
-                    <div className="promise-quick-action-popover-title">
-                      <div className="promise-quick-action-popover-title-text">
-                        Select from filters
-                      </div>
-                    </div>
                     <Stack
-                      spacing={2}
+                      spacing={1}
                       className="promise-quick-action-popover-body"
                     >
-                      <Tip message="Under construction" />
+                      <PromiseQuickFilterGroup label="Filter Promises by Category">
+                        {filterGroupsOptions["category"].map(
+                          (category, index) => (
+                            <Chip
+                              className={
+                                selectedFilterGroupsIndex["category"].includes(
+                                  index + 1
+                                )
+                                  ? "promise-quick-filter-item promise-quick-filter-item-selected"
+                                  : "promise-quick-filter-item"
+                              }
+                              variant={
+                                selectedFilterGroupsIndex["category"].includes(
+                                  index + 1
+                                )
+                                  ? "filled"
+                                  : "outlined"
+                              }
+                              size="small"
+                              onClick={handleSelectFilterItemClick(
+                                "category",
+                                index
+                              )}
+                              onDelete={
+                                selectedFilterGroupsIndex["category"].includes(
+                                  index + 1
+                                )
+                                  ? handleRemoveFilterItem("category", index)
+                                  : undefined
+                              }
+                              key={index}
+                              label={category}
+                            />
+                          )
+                        )}
+                      </PromiseQuickFilterGroup>
+                      <PromiseQuickFilterGroup label="Filter Promises by Status">
+                        {filterGroupsOptions["status"].map((status, index) => (
+                          <Chip
+                            className={
+                              index === selectedFilterGroupsIndex["status"] - 1
+                                ? "promise-quick-filter-item promise-quick-filter-item-selected"
+                                : "promise-quick-filter-item"
+                            }
+                            size="small"
+                            onClick={handleSelectFilterItemClick(
+                              "status",
+                              index
+                            )}
+                            variant={
+                              index === selectedFilterGroupsIndex["status"] - 1
+                                ? "filled"
+                                : "outlined"
+                            }
+                            onDelete={
+                              index === selectedFilterGroupsIndex["status"] - 1
+                                ? handleRemoveFilterItem("status")
+                                : undefined
+                            }
+                            key={index}
+                            label={status}
+                          />
+                        ))}
+                      </PromiseQuickFilterGroup>
+                      <PromiseQuickFilterGroup label="Sort Promises by">
+                        {sortMenuOptions.map((sort, index) => (
+                          <Chip
+                            className={
+                              index === selectedSortMenuIndex
+                                ? "promise-quick-filter-item promise-quick-filter-item-selected"
+                                : "promise-quick-filter-item"
+                            }
+                            variant={
+                              index === selectedSortMenuIndex
+                                ? "filled"
+                                : "outlined"
+                            }
+                            onClick={handleSelectSortMenuItemClick(index)}
+                            key={index}
+                            size="small"
+                            label={sort.value}
+                          />
+                        ))}
+                      </PromiseQuickFilterGroup>
                     </Stack>
                   </Stack>
                 </Popover>
               </div>
-
-              <div className="promise-quick-action">
-                <div className="promise-quick-action-label">Sort by:</div>
-                <Stack
-                  direction="row"
-                  alignItems="center"
-                  className="promise-quick-action-value"
-                  onClick={handleSortMenuOpen}
-                >
-                  <div>{sortMenuOptions[selectedSortMenuIndex].value}</div>
-                  <DropDownButton fontSize="inherit" />
-                </Stack>
-
-                <Menu
-                  anchorEl={sortMenuAnchorEl}
-                  open={openSortMenu}
-                  onClose={handleSortMenuClose}
-                >
-                  <Box className="promise-quick-action-menu">
-                    {sortMenuOptions.map((option, index) => (
-                      <MenuItem
-                        key={index}
-                        selected={index === selectedSortMenuIndex}
-                        onClick={(event) =>
-                          handleSortMenuItemClick(event, index)
-                        }
-                        sx={{
-                          fontSize: "15px",
-                        }}
-                      >
-                        {option.value}
-                      </MenuItem>
-                    ))}
-                  </Box>
-                </Menu>
-              </div>
-
-              <div className="promise-quick-action">
-                <div className="promise-quick-action-label">Colors:</div>
-                <div
-                  onClick={handlehelpOpen}
-                  className="promise-quick-action-value"
-                >
-                  <div>Guide</div>
-                  <DropDownButton fontSize="inherit" />
-                </div>
-                <Popover
-                  open={openhelp}
-                  anchorEl={helpAnchorEl}
-                  onClose={handlehelpClose}
-                >
-                  <Box className="promise-quick-action-popover">
-                    <Stack className="promise-quick-action-popover">
-                      <div className="promise-quick-action-popover-title">
-                        <div className="promise-quick-action-popover-title-text">
-                          Promise status by Colors
-                        </div>
-                      </div>
-                      <Stack
-                        spacing={2}
-                        className="promise-quick-action-popover-body"
-                      ></Stack>
-                    </Stack>
-                  </Box>
-                </Popover>
-              </div>
             </div>
 
-            <Stack direction="row" className="promise-items">
-              {PromiseList.map((promise, index) => (
-                <PromiseItem
-                  key={index}
-                  status={promise.status}
-                  date={promise.updatedOn}
-                  title={promise.title}
-                  overview={promise.overview}
-                  id={promise.id}
-                />
-              ))}
-            </Stack>
+            {promises ? (
+              promises.length > 0 ? (
+                <div className="promise-items-container">
+                  <Stack direction="row" className="promise-items">
+                    {promises
+                      .sort((a, b) =>
+                        sortMenuOptions[selectedSortMenuIndex].action(a, b)
+                      )
+                      .map((promise, index) => (
+                        <PromiseItem
+                          key={index}
+                          status={promise.status}
+                          date={promise.updatedOn}
+                          title={promise.title}
+                          overview={promise.overview}
+                          id={promise.id}
+                        />
+                      ))}
+                  </Stack>
+                </div>
+              ) : (
+                <div className="promise-items-container-no-results">
+                  <div className="promise-items-container-no-results-inner">
+                    <div className="promise-items-container-no-results-image">
+                      <img src={bgNoResults} alt="" />
+                    </div>
+                  </div>
+                </div>
+              )
+            ) : (
+              <div>Could not fetch Promises</div>
+            )}
           </Stack>
         </Box>
       </CenteredContainer>

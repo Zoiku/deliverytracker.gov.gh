@@ -7,7 +7,7 @@ import TimelineDot from "@mui/lab/TimelineDot";
 import Lightbox from "./Lightbox";
 import "../styles/Timelines.css";
 
-const TimelineComponent = ({ events, dotsColor }) => {
+const TimelineComponent = ({ events, theme }) => {
   return (
     <Timeline
       style={{ margin: 0, padding: 0, height: "100%" }}
@@ -22,7 +22,7 @@ const TimelineComponent = ({ events, dotsColor }) => {
         events.map((event, index) => (
           <TimelineItem key={index}>
             <TimelineSeparator>
-              <TimelineDot sx={{ background: dotsColor }} />
+              <TimelineDot sx={{ background: theme }} />
               <TimelineConnector />
             </TimelineSeparator>
 
@@ -31,7 +31,7 @@ const TimelineComponent = ({ events, dotsColor }) => {
                 <div>{event.date}</div>
                 <div>{event.about}</div>
                 <div className="timeline-view-gallery-text">
-                  <Lightbox gallery={event.gallery} />
+                  <Lightbox theme={theme} gallery={event.gallery} />
                 </div>
               </div>
             </TimelineContent>

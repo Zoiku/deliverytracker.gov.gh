@@ -16,6 +16,6 @@
 
 .swiper-pagination-bullet {
   background: var(--third-text-color);
-  width: 9px;
-  height: 9px;
+  width: 12px;
+  height: 12px;
 }

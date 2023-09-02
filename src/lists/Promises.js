@@ -5,7 +5,7 @@ export const PromiseList = [
     title: "Increase minimum wage by 50%",
     overview:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor rem quos ratione laboriosam voluptas praesentium magnam animi molestias error, et totam, nihil voluptatum repellat suscipit id impedit minima laborum Repellendus",
-    deadline: new Date(),
+    deadline: new Date("11/11/2024"),
     status: 2,
     relevance: 4,
     updatedOn: new Date(),
@@ -13,7 +13,8 @@ export const PromiseList = [
     id: 1,
     sections: [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",],
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",
+    ],
     categories: [2, 1, 5],
   },
   {
@@ -28,7 +29,8 @@ export const PromiseList = [
     id: 2,
     sections: [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",],
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",
+    ],
     categories: [1, 5],
   },
   {
@@ -36,21 +38,22 @@ export const PromiseList = [
     overview:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor rem quos ratione laboriosam voluptas praesentium magnam animi molestias error, et totam, nihil voluptatum repellat suscipit id impedit minima laborum Repellendus",
     deadline: new Date(),
-    status: 3,
+    status: 2,
     relevance: 8,
-    updatedOn: new Date("1/1/2022"),
+    updatedOn: new Date(),
     imgHeader: img,
     id: 3,
     sections: [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",],
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",
+    ],
     categories: [1, 4, 5],
   },
   {
     title: "Staff more women in higher positions",
     overview:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor rem quos ratione laboriosam voluptas praesentium magnam animi molestias error, et totam, nihil voluptatum repellat suscipit id impedit minima laborum Repellendus",
-    deadline: new Date(),
+    deadline: new Date("1/1/2024"),
     status: 1,
     relevance: 1,
     updatedOn: new Date(),
@@ -58,22 +61,24 @@ export const PromiseList = [
     id: 4,
     sections: [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",],
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",
+    ],
     categories: [1, 3, 5],
   },
   {
     title: "Increase crop productions by 50%",
     overview:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor rem quos ratione laboriosam voluptas praesentium magnam animi molestias error, et totam, nihil voluptatum repellat suscipit id impedit minima laborum Repellendus",
-    deadline: new Date(),
-    status: 2,
+    deadline: new Date("1/2/2024"),
+    status: 3,
     relevance: 6,
     updatedOn: new Date(),
     imgHeader: img,
     id: 5,
     sections: [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",],
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",
+    ],
     categories: [2, 5],
   },
   {
@@ -83,27 +88,29 @@ export const PromiseList = [
     deadline: new Date(),
     status: 1,
     relevance: 3,
-    updatedOn: new Date(),
+    updatedOn: new Date("12/12/2023"),
     imgHeader: img,
     id: 6,
     sections: [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",],
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",
+    ],
     categories: [4, 5],
   },
   {
     title: "One town One school campaign",
     overview:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor rem quos ratione laboriosam voluptas praesentium magnam animi molestias error, et totam, nihil voluptatum repellat suscipit id impedit minima laborum Repellendus",
-    deadline: new Date(),
+    deadline: new Date("4/4/2024"),
     status: 1,
     relevance: 7,
-    updatedOn: new Date(),
+    updatedOn: new Date("1/12/2023"),
     imgHeader: img,
     id: 7,
     sections: [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",],
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",
+    ],
     categories: [1, 3],
   },
   {
@@ -111,14 +118,15 @@ export const PromiseList = [
     overview:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor rem quos ratione laboriosam voluptas praesentium magnam animi molestias error, et totam, nihil voluptatum repellat suscipit id impedit minima laborum Repellendus",
     deadline: new Date(),
-    status: 1,
-    relevance: 2,
-    updatedOn: new Date(),
+    status: 5,
+    relevance: 4,
+    updatedOn: new Date("12/12/2023"),
     imgHeader: img,
     id: 8,
     sections: [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",],
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nam, voluptate, similique eos vitae harum, deserunt velit cupiditate possimus esse sit voluptatum. Quibusdam dolores et, eum a illo, exercitationem illum doloremque non officia earum voluptatum, dolorem repellendus reprehenderit debitis! Eligendi voluptas voluptatem a numquam facere sunt repellat dolor expedita minus quaerat delectus ducimus eius in, recusandae reiciendis commodi ullam. Est distinctio quos eum. Velit unde distinctio quod nobis asperiores accusantium dolorem sapiente eveniet quibusdam non, mollitia, autem quidem cum dignissimos eos deserunt nisi? Veritatis, illum vero illo porro dignissimos nobis iusto enim quis! Nesciunt laborum eum non atque cupiditate magnam.",
+    ],
     categories: [1, 2, 3, 4, 5],
   },
 ];

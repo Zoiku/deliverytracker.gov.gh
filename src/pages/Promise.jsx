@@ -114,7 +114,7 @@ const PromiseComponent = () => {
               title="Timeline"
               titleHelper="Event updates on the Promise"
             >
-              <Timeline dotsColor={COLORS[promise.status]} events={EventList} />
+              <Timeline theme={COLORS[promise.status]} events={EventList} />
             </PromiseStack>
           </div>
         </Stack>

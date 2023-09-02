@@ -5,10 +5,11 @@
 .skeleton-search-box {
   cursor: pointer;
   width: 250px;
-  padding: 10px 12px;
+  padding: 8px 10px;
   border-radius: 5px;
   background: #f3f5f8;
   color: var(--primary-text-color);
+  font-weight: 600;
 }
 
 .main-search-box {

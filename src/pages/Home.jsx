@@ -108,7 +108,7 @@ const Home = () => {
               slidesPerView={4}
               spaceBetween={20}
               slides={PromiseList.sort((a, b) => b.updatedOn - a.updatedOn)
-                .slice(0, 5)
+                .slice(0, 4)
                 .map((promise, index) => (
                   <PromiseItem
                     id={promise.id}
@@ -124,15 +124,17 @@ const Home = () => {
             <Slider
               slidesPerView={1}
               spaceBetween={1}
-              slides={PromiseList.map((promise, index) => (
-                <PromiseItem
-                  id={promise.id}
-                  overview={promise.overview}
-                  status={promise.status}
-                  title={promise.title}
-                  key={index}
-                />
-              ))}
+              slides={PromiseList.sort((a, b) => b.updatedOn - a.updatedOn)
+                .slice(0, 4)
+                .map((promise, index) => (
+                  <PromiseItem
+                    id={promise.id}
+                    overview={promise.overview}
+                    status={promise.status}
+                    title={promise.title}
+                    key={index}
+                  />
+                ))}
             />
           </div>
         </HomeSection>

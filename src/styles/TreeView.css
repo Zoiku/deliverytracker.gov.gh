@@ -1,0 +1,35 @@
+.tree-view-items-container {
+  position: relative;
+}
+
+.tree-view-items-container::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  height: 100%;
+  border-left: 1px dashed rgba(128, 128, 128, 0.5);
+}
+
+.tree-view-item-inner {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.tree-view-item-inner-inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.tree-view-items {
+  padding-left: 30px;
+}
+
+.tree-view-label {
+  font-weight: 600;
+}
+
+.tree-view-button-icon {
+  display: flex;
+  align-items: center;
+}
