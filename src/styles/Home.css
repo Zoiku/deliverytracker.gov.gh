@@ -8,7 +8,7 @@
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent;
-  background: linear-gradient(90deg, #2270fd, #000 100%);
+  background: linear-gradient(90deg, #2270fd, #062f7a 100%);
 }
 
 .home-introduction-body {
@@ -130,7 +130,15 @@
 }
 
 @media screen and (max-width: 1150px) {
-  .home-page-sections > div {
+  .home-page-introduction-title-text {
+    font-size: clamp(40px, 8vw, 120px) !important;
+  }
+
+  .home-page-sections > div:nth-child(2) {
+    margin-bottom: 0 !important;
+  }
+
+  .home-page-sections > div:not(:nth-child(2)) {
     margin: 30px 0 !important;
   }
 
