@@ -18,6 +18,7 @@ import {
 import bgNoResults from "../assets/bgs/404.svg";
 import TreeView from "../components/TreeView";
 import Button from "../components/Button";
+import Drawer from "../components/Drawer";
 
 export const COLORS = {
   1: "var(--promise-status-unstarted)",
@@ -171,6 +172,116 @@ const Promises = () => {
                   <div>Show All Options</div>
                   <DropDownButton fontSize="inherit" />
                 </div>
+
+                <Drawer
+                  title="Manage Promises"
+                  open={openFilterMenu}
+                  onOpen={() => {}}
+                  onClose={handleFilterMenuClose}
+                >
+                  <Stack>
+                    <Stack spacing={1}>
+                      <PromiseQuickFilterGroup label="Filter Promises by Category">
+                        {filterGroupsOptions["category"].map(
+                          (category, index) => (
+                            <Chip
+                              className={
+                                selectedFilterGroupsIndex["category"].includes(
+                                  index + 1
+                                )
+                                  ? "promise-quick-filter-item promise-quick-filter-item-selected"
+                                  : "promise-quick-filter-item"
+                              }
+                              variant={
+                                selectedFilterGroupsIndex["category"].includes(
+                                  index + 1
+                                )
+                                  ? "filled"
+                                  : "outlined"
+                              }
+                              size="small"
+                              onClick={handleSelectFilterItemClick(
+                                "category",
+                                index
+                              )}
+                              onDelete={
+                                selectedFilterGroupsIndex["category"].includes(
+                                  index + 1
+                                )
+                                  ? handleRemoveFilterItem("category", index)
+                                  : undefined
+                              }
+                              key={index}
+                              label={category}
+                            />
+                          )
+                        )}
+                        <Collapse
+                          in={selectedFilterGroupsIndex.category.length > 1}
+                        >
+                          <Box marginTop={1}>
+                            <Button
+                              size="small"
+                              variant="outlined"
+                              color="error"
+                              onClick={handleResetFilterItems("category")}
+                            >
+                              Reset
+                            </Button>
+                          </Box>
+                        </Collapse>
+                      </PromiseQuickFilterGroup>
+                      <PromiseQuickFilterGroup label="Filter Promises by Status">
+                        {filterGroupsOptions["status"].map((status, index) => (
+                          <Chip
+                            className={
+                              index === selectedFilterGroupsIndex["status"] - 1
+                                ? "promise-quick-filter-item promise-quick-filter-item-selected"
+                                : "promise-quick-filter-item"
+                            }
+                            size="small"
+                            onClick={handleSelectFilterItemClick(
+                              "status",
+                              index
+                            )}
+                            variant={
+                              index === selectedFilterGroupsIndex["status"] - 1
+                                ? "filled"
+                                : "outlined"
+                            }
+                            onDelete={
+                              index === selectedFilterGroupsIndex["status"] - 1
+                                ? handleRemoveFilterItem("status")
+                                : undefined
+                            }
+                            key={index}
+                            label={status}
+                          />
+                        ))}
+                      </PromiseQuickFilterGroup>
+                      <PromiseQuickFilterGroup label="Sort Promises by">
+                        {sortMenuOptions.map((sort, index) => (
+                          <Chip
+                            className={
+                              index === selectedSortMenuIndex
+                                ? "promise-quick-filter-item promise-quick-filter-item-selected"
+                                : "promise-quick-filter-item"
+                            }
+                            variant={
+                              index === selectedSortMenuIndex
+                                ? "filled"
+                                : "outlined"
+                            }
+                            onClick={handleSelectSortMenuItemClick(index)}
+                            key={index}
+                            size="small"
+                            label={sort.value}
+                          />
+                        ))}
+                      </PromiseQuickFilterGroup>
+                    </Stack>
+                  </Stack>
+                </Drawer>
                 <Popover
                   open={openFilterMenu}
                   anchorEl={filterMenuAnchorEl}

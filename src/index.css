@@ -24,3 +24,21 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif !important;
 }
+
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: block;
+}
+
+@media screen and (max-width: 1024px) {
+  .mobile-only {
+    display: block;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+}

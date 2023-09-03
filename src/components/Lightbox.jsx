@@ -7,6 +7,7 @@ import Lightbox from "yet-another-react-lightbox";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Captions from "yet-another-react-lightbox/plugins/captions";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
 const LightboxComponent = ({ theme, gallery }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -31,9 +32,10 @@ const LightboxComponent = ({ theme, gallery }) => {
   return gallery ? (
     <div>
       <Lightbox
+        carousel={{ imageFit: "cover" }}
         open={openGallery}
         close={toggleOpenGallery(false)}
-        plugins={[Fullscreen, Thumbnails, Captions]}
+        plugins={[Fullscreen, Thumbnails, Captions, Zoom]}
         captions={{
           showToggle: true,
           descriptionMaxLines: 5,

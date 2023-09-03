@@ -18,7 +18,7 @@
 .tree-view-item-inner-inner {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
 }
 
 .tree-view-items {
@@ -32,4 +32,10 @@
 .tree-view-button-icon {
   display: flex;
   align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .tree-view-label {
+    font-weight: 500;
+  }
 }

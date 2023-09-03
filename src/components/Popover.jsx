@@ -7,7 +7,7 @@ const PopoverComponent = (props) => {
   return (
     <Popover
       {...props}
-      className="popover-component"
+      className="popover-component desktop-only"
       id={id}
       elevation={0}
       disableScrollLock

@@ -1,0 +1,25 @@
+.drawer-title {
+  padding: 30px 10px 10px 10px;
+  font-weight: 700;
+  text-align: center;
+  border-bottom: 1px solid var(--bg-gray);
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 10;
+}
+
+.drawer-body {
+  padding: 10px;
+  max-height: 45vh;
+  overflow-y: auto;
+}
+
+.css-fy2uxz {
+  border-radius: 10px 10px 0 0 !important;
+  overflow: clip;
+}
+
+.css-9emuhu-MuiPaper-root-MuiDrawer-paper {
+  border-radius: 10px 10px 0 0 !important;
+}
