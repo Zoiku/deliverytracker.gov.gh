@@ -81,11 +81,10 @@ const Home = () => {
                 accusamus molestiae nemo praesentium natus veritatis consectetur
                 libero. Aliquam molestias facilis eaque consectetur. Quo sed
                 suscipit a ratione eum.
-                <div
-                  onClick={navigateTo("/promises")}
-                  className="home-introduction-body-inner-view-promises"
-                >
-                  View All Promises
+                <div className="home-introduction-body-inner-view-promises">
+                  <span onClick={navigateTo("/promises")}>
+                    View All Promises
+                  </span>
                 </div>
               </div>
             </div>

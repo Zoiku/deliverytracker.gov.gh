@@ -19,6 +19,10 @@ import bgNoResults from "../assets/bgs/404.svg";
 import TreeView from "../components/TreeView";
 import Button from "../components/Button";
 import Drawer from "../components/Drawer";
+import ViewListIcon from "@mui/icons-material/ViewList";
+import ViewModuleIcon from "@mui/icons-material/ViewModule";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 
 export const COLORS = {
   1: "var(--promise-status-unstarted)",
@@ -56,7 +60,33 @@ export const PromiseItem = ({ title, status, overview, id }) => {
   );
 };
 
-const PromiseQuickFilterGroup = ({ label, children, index }) => (
+const PromiseItemList = ({ status, title, overview, id }) => {
+  const navigate = useNavigate();
+  const navigateTo = () => navigate(`/promise?id=${id}`);
+  return (
+    <div className="promise-item-list-item">
+      <div className="promise-item-list-item-inner">
+        <div className="promise-item-list-item-title">
+          <div
+            onClick={navigateTo}
+            className="promise-item-list-item-title-text"
+          >
+            {title}
+          </div>
+        </div>
+        <div
+          style={{ background: COLORS[status] }}
+          className="promise-item-list-item-status"
+        >
+          {STATUS[status]}
+        </div>
+        <div className="promise-item-list-item-body">{overview}</div>
+      </div>
+    </div>
+  );
+};
+
+const PromiseQuickFilterGroup = ({ label, children }) => (
   <div className="promise-quick-filter-group">
     <TreeView label={label}>{children}</TreeView>
   </div>
@@ -128,7 +158,6 @@ const Promises = () => {
       });
     }
   };
-
   const handleResetFilterItems = (filterType) => () => {
     if (filterType === "category") {
       setSelectedFilterGroupsIndex((selectedFilters) => {
@@ -145,6 +174,10 @@ const Promises = () => {
         };
       });
     }
+  };
+  const [view, setView] = useState("module");
+  const handleChangeView = (_, nextView) => {
+    nextView && setView(nextView);
   };
 
   useEffect(() => {
@@ -394,32 +427,64 @@ const Promises = () => {
                   </Stack>
                 </Popover>
               </div>
+              <ToggleButtonGroup
+                exclusive
+                value={view}
+                onChange={handleChangeView}
+              >
+                <ToggleButton size="small" value="module" aria-label="module">
+                  <ViewModuleIcon fontSize="10px" />
+                </ToggleButton>
+                <ToggleButton size="small" value="list" aria-label="list">
+                  <ViewListIcon fontSize="10px" />
+                </ToggleButton>
+              </ToggleButtonGroup>
             </div>
 
             {promises ? (
               promises.length > 0 ? (
-                <div className="promise-items-container">
-                  <Stack direction="row" className="promise-items">
-                    {promises
-                      .sort((a, b) =>
-                        sortMenuOptions[selectedSortMenuIndex].action(a, b)
-                      )
-                      .map((promise, index) => (
-                        <PromiseItem
-                          key={index}
-                          status={promise.status}
-                          date={promise.updatedOn}
-                          title={promise.title}
-                          overview={promise.overview}
-                          id={promise.id}
-                        />
-                      ))}
-                  </Stack>
+                <div className="promise-items-modules-container">
+                  {view === "module" && (
+                    <div className="promise-items-modules">
+                      {promises
+                        .sort((a, b) =>
+                          sortMenuOptions[selectedSortMenuIndex].action(a, b)
+                        )
+                        .map((promise, index) => (
+                          <PromiseItem
+                            key={index}
+                            status={promise.status}
+                            date={promise.updatedOn}
+                            title={promise.title}
+                            overview={promise.overview}
+                            id={promise.id}
+                          />
+                        ))}
+                    </div>
+                  )}
+
+                  {view === "list" && (
+                    <div className="promise-items-list">
+                      {promises
+                        .sort((a, b) =>
+                          sortMenuOptions[selectedSortMenuIndex].action(a, b)
+                        )
+                        .map((promise, index) => (
+                          <PromiseItemList
+                            key={index}
+                            status={promise.status}
+                            title={promise.title}
+                            overview={promise.overview}
+                            id={promise.id}
+                          />
+                        ))}
+                    </div>
+                  )}
                 </div>
               ) : (
-                <div className="promise-items-container-no-results">
-                  <div className="promise-items-container-no-results-inner">
-                    <div className="promise-items-container-no-results-image">
+                <div className="promise-items-modules-container-no-results">
+                  <div className="promise-items-modules-container-no-results-inner">
+                    <div className="promise-items-modules-container-no-results-image">
                       <img src={bgNoResults} alt="" />
                     </div>
                   </div>

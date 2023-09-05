@@ -25,6 +25,9 @@
   margin-top: 15px;
   font-weight: 500;
   font-size: 17px;
+}
+
+.home-introduction-body-inner-view-promises span {
   cursor: pointer;
 }
 
