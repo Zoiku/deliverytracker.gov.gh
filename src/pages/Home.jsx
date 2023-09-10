@@ -68,7 +68,7 @@ const Home = () => {
           <Stack spacing={1} className="home-page-introduction">
             <div className="home-page-introduction-title">
               <div className="home-page-introduction-title-text">
-                Promise Tracker
+                Tracking Frank Hon. Annoh-Dompreh
               </div>
             </div>
             <div className="home-introduction-body">

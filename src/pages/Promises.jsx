@@ -5,8 +5,7 @@ import { Avatar, Box, Chip, Collapse, Stack } from "@mui/material";
 import { PromiseList } from "../lists/Promises";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import DropDownButton from "@mui/icons-material/KeyboardArrowDownRounded";
-import Popover from "../components/Popover";
+import Menu from "../components/Menu";
 import { CATEGORY, STATUS } from "../lists/Filters";
 import {
   filteringPromises,
@@ -15,7 +14,7 @@ import {
   sortOldest,
   sortPromisedDeadline,
 } from "../functions";
-import bgNoResults from "../assets/bgs/404.svg";
+import nodata from "../assets/bgs/no data.svg";
 import TreeView from "../components/TreeView";
 import Button from "../components/Button";
 import Drawer from "../components/Drawer";
@@ -23,6 +22,7 @@ import ViewListIcon from "@mui/icons-material/ViewList";
 import ViewModuleIcon from "@mui/icons-material/ViewModule";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import { ArrowDropDownRounded } from "@mui/icons-material";
 
 export const COLORS = {
   1: "var(--promise-status-unstarted)",
@@ -73,12 +73,6 @@ const PromiseItemList = ({ status, title, overview, id }) => {
           >
             {title}
           </div>
-        </div>
-        <div
-          style={{ background: COLORS[status] }}
-          className="promise-item-list-item-status"
-        >
-          {STATUS[status]}
         </div>
         <div className="promise-item-list-item-body">{overview}</div>
       </div>
@@ -195,16 +189,19 @@ const Promises = () => {
           <Stack spacing={5}>
             <div className="promises-quick-actions">
               <div className="promise-quick-action">
-                <div className="promise-quick-action-label">
-                  Manage Promises:
-                </div>
-                <div
+                <Chip
                   onClick={handleFilterMenuOpen}
-                  className="promise-quick-action-value"
-                >
-                  <div>Show All Options</div>
-                  <DropDownButton fontSize="inherit" />
-                </div>
+                  variant={"outlined"}
+                  className="promise-quick-action-chip"
+                  label={
+                    <div className="promise-quick-action-chip-label">
+                      <div>Manage Promises</div>
+                      <div className="promise-quick-action-chip-label-icon">
+                        <ArrowDropDownRounded fontSize="inherit" />
+                      </div>
+                    </div>
+                  }
+                />
 
                 <Drawer
                   title="Manage Promises"
@@ -315,7 +312,8 @@ const Promises = () => {
                     </Stack>
                   </Stack>
                 </Drawer>
-                <Popover
+
+                <Menu
                   open={openFilterMenu}
                   anchorEl={filterMenuAnchorEl}
                   onClose={handleFilterMenuClose}
@@ -425,7 +423,7 @@ const Promises = () => {
                       </PromiseQuickFilterGroup>
                     </Stack>
                   </Stack>
-                </Popover>
+                </Menu>
               </div>
               <ToggleButtonGroup
                 exclusive
@@ -485,7 +483,7 @@ const Promises = () => {
                 <div className="promise-items-modules-container-no-results">
                   <div className="promise-items-modules-container-no-results-inner">
                     <div className="promise-items-modules-container-no-results-image">
-                      <img src={bgNoResults} alt="" />
+                      <img src={nodata} alt="" />
                     </div>
                   </div>
                 </div>
