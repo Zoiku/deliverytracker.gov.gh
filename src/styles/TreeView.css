@@ -36,7 +36,7 @@
   align-items: center;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .tree-view-label {
     font-weight: 500;
   }

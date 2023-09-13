@@ -36,7 +36,7 @@
   font-weight: 700;
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1024px) {
   .nav-web-container {
     display: none;
   }

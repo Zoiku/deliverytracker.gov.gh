@@ -86,7 +86,7 @@
   height: 100%;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .promise-header-title {
     font-size: xx-large;
   }
