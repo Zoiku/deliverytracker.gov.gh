@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Delivery Tracker Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React interface for presenting government promises and delivery information. It provides a homepage, promise listings, individual promise views, and a fact-check page, with charts, maps, timelines, search, and filters.
 
-## Available Scripts
+Built with React 18, Create React App, React Router, Material UI, Redux Toolkit, and ECharts.
 
-In the project directory, you can run:
+## Local development
 
-### `npm start`
+```sh
+git clone https://github.com/Zoiku/deliverytracker.gov.gh.git
+cd deliverytracker.gov.gh
+npm install
+npm start
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Node.js and npm are required. The development server normally opens at `http://localhost:3000`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Data and scope
 
-### `npm test`
+This repository contains the frontend and bundled content under `src/lists/` and map assets under `src/assets/map/`. It does not include a backend service. `src/services/AxiosInstance.js` is currently empty; do not assume an environment variable or API setup exists there.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The repository name does not establish whether the code matches a currently deployed public service. Review displayed content and data sources before publishing.
 
-### `npm run build`
+## Commands and deployment
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `npm test`: Create React App test runner.
+- `npm run build`: production assets in `build/`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Static hosting needs an `index.html` fallback for browser routes, including `/promises`, `/promise`, and `/fact-check`. Review the Dockerfile and its referenced files before selecting container deployment.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Code guide
 
-### `npm run eject`
+- `src/App.js`: route definitions.
+- `src/pages/`, `src/layouts/`: screens and page layouts.
+- `src/lists/`: promises, events, navigation, and filters.
+- `src/charts/`: chart components and options.
+- `src/components/`: search, timelines, maps-related UI, and shared controls.
+- `src/redux/`: application state.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Check promise navigation, filters, charts, image galleries, and direct loading of nested routes after changes.
